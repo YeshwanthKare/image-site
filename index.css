@@ -53,7 +53,7 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    height: 60px;
+    height: 400px;
     display: flex;
     align-items: center;
     position: relative;
@@ -127,21 +127,45 @@ li a {
     /* color: #555; */
 }
 
-.display-left {
-    /* padding-left: 10px; */
-    /* list-style-type: none; */
-}
+
 
 .explore {
     position: relative;
     margin: 13px 0;
     padding: 5px 15px!important;
-    color: #191b26;
     font-size: 14px;
     font-family: sans-serif;
     font-size: 0.9em;
     font-weight: 400;
 }
+
+.display-right .explore a:hover {
+    color: #5e5f66;
+    background: #fff;
+    cursor: pointer;
+}
+
+.drp-down-container{
+    min-width: 135px;
+    color: #9aa2b0;
+    background: #191b26 !important;
+}
+
+.drp-down .drp-down-container .media a{
+    color: #9aa2b0;
+    padding: 5px 15px !important;
+}
+
+.drp-down .drp-down-container .community a {
+    color: #9aa2b0;
+    padding: 5px 15px !important;
+}
+
+.pad {
+    padding: 5px 15px !important;
+}
+
+
 
 #login {
     margin-left: 10px;
@@ -151,13 +175,12 @@ li a {
     position: absolute;
     padding: .15em ;
     margin-left: 4px;
-    color: grey;
 }
 
 
 .main {
     height: 540px;
-    background-color: blue;
+    background-color: #3f5c3f;
     color: white;
     font-family:sans-serif;
     display: flex;

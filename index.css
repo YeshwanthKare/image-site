@@ -11,18 +11,52 @@
     /* font-family: 'Montserrat', sans-serif; */
 }
 
-.explore_dropdown {
+.dropdown_container {
+    background-color: #3f5c3f;
+    height: 250px;
+    width: 500px;
     display: flex;
 }
 
-.social_icons {
-    display: flex;
+.media {
+    text-align: left;
+    padding-top: 20px;
 }
 
-.social_icons div i {
-    padding: 6px;
-    justify-content: center;
-    align-items: center;
+.media b {
+    margin-left: 28px;
+
+}
+
+.media li {
+    padding: 10px 15px;
+}
+
+.community {
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.community b {
+    text-align: left;
+}
+
+.community li {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.about {
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.about b {
+    text-align: left;
+}
+
+.about li {
+    padding: 10px 5px;
 }
 
 .input {

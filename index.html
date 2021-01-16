@@ -6,7 +6,7 @@
         <title>Pixabay</title>
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
         <!-- <script src="nav-dropdown.js"></script> -->
         <style>
             .show {
@@ -25,12 +25,17 @@
                     <li class="display-left"><a class="nav-hide" href="#">Videos</a></li>
                 </ul>
                 <ul class="nav-right">
-                    <li class="display-right">
-                        <div class="explore"><button onclick="expDropdown()" class="explore-btn"><a>Explore<i class="fas fa-angle-down"></i></a></button></div> 
-                        <div id="exp-drp-dwn" class="explore_dropdown show">
+                    <li>
+                        <div class="explore"><button class="explore-btn nav-pad"><a>Explore<i class="fas fa-angle-down"></i></a></button></div> 
+                        <div id="exp-drp-dwn" class="explore_dropdown">
                             <div class="dropdown_container">
                                <ul class="media">
                                     <b>Media</b>
+                                    <li><a href="">Photos</a></li>
+                                    <li><a href="">Illustrations</a></li>
+                                    <li><a href="">Vectors</a></li>
+                                    <li><a href="">Videos</a></li>
+                                    <hr>
                                     <li><a href="#">Editor's Choice</a></li>
                                     <li><a href="#">Popular Images</a></li>
                                     <li><a href="#">Popular Videos</a></li>
@@ -46,7 +51,7 @@
                                     <b>About</b>
                                     <li><a href="#">About Us</a></li>
                                     <li><i class="fas fa-globe"></i> Language</li>
-                                    <hr>
+                                    <hr class="my-hr-line">                                    
                                     <li class="social_icons">
                                     
                                         <a class="icon" href="https://www.facebook.com/yesh.surya.5" target="_blank"><i class="fab fa-facebook-square"></i></a>
@@ -64,9 +69,17 @@
                         
                     </li>
                     <!-- <i class="fas fa-angle-down"></i> -->
-                    <li class="display-right"><a id="login" href="#">Log in</a></li>
-                    <li class="display-right join" style="border-left: 1px solid #eee;"><a href="#">Join</a></li>
-                    <li class="display-right"><a class="" href="#">Upload</a></li>
+                    <li class="display-right nav-pad"><a id="login" href="#">Log in</a></li>
+                    <div>
+                        <hr style="display: inline; width: 100%; position: relative; color: #adb5bd !important;">
+                    </div>
+                    <li class="display-right join nav-pad"><a href="#">Join</a></li>
+                    <li class="display-right nav-pad"><button class="upload_button"><i class="fas fa-upload"></i> Upload</button></li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
@@ -102,50 +115,18 @@
             
         </div>
         <script>
-            // let dropdownBtn = document.querySelector('.explore-btn');
-            // let menuContent = document.querySelector('.explore_dropdown');
-            // dropdownBtn.addEventListener('click',()=>{
-            //     if(menuContent.style.display===""){
-            //         menuContent.style.display="block";
-            //     } else {
-            //         menuContent.style.display="";
-            //     }
-            // })
-
-
-            // Clicking dropdown button will toggle display 
-
-            function expDropdown() { 
-                document.getElementById("exp-drp-dwn").classList.toggle("show"); 
-            } 
-
-             // Prevents menu from closing when clicked inside 
-
-            document.getElementById("exp-drp-dwn").addEventListener('click', function (event) { 
-                alert("click outside"); 
-                event.stopPropagation(); 
-            }); 
-
-            // Closes the menu in the event of outside click 
-            window.onclick = function(event) {
-                if (!event.target.matches('.explore-btn')) { 
-                    console.log(event)            
-                    var dropdowns = document.getElementsByClassName("explore_dropdown"); 
-                  
-                    var i; 
-                    for (i = 0; i < dropdowns.length; i++) { 
-                        var openDropdown = dropdowns[i];
-                        openDropdown.classList.toggle('show')
-                        console.log(openDropdown)
-                        if (openDropdown.classList.contains('show')) { 
-                            openDropdown.classList.remove('show'); 
-                        }else {
-                            openDropdown.classList.add('show')
-                        }
-                    
-                    } 
-                } 
-            } 
+            let dropdownBtn = document.querySelector('.explore-btn');
+            let menuContent = document.querySelector('.explore_dropdown');
+            dropdownBtn.addEventListener('click',()=>{
+                if(menuContent.style.display===""){
+                    menuContent.style.display="block";
+                } else {
+                    menuContent.style.display="";
+                }
+            });
+            dropdownBtn.addEventListener('blur', () => {
+                menuContent.style.display = '';
+            });
         </script>            
     </body>
 </html>

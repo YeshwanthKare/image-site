@@ -8,13 +8,13 @@
     outline: none;
     list-style: none;
     
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .dropdown_container {
     background-color: #eaecee;
     height: 220px;
-    width: 470px;
+    width: 475px;
     display: flex;
 }
 
@@ -77,6 +77,11 @@
     
 }
 
+.my-hr-line {
+    position: relative;
+    width: 100%;
+}
+
 
 
 .input {
@@ -106,7 +111,7 @@
     position: absolute;
     top: 30px;
     bottom: 0;
-    left: 380px;
+    left: 400px;
     right: 0;
 }
 
@@ -184,10 +189,14 @@ body {
 .nav-right {
     display: flex;
     float: right;
-    right: 40px;
+    right: 20px;
     position: absolute;
     align-items: center;
     height: 60px;
+}
+
+.nav-right .nav-pad {
+    padding: 0 8px !important;
 }
 
 
@@ -201,7 +210,7 @@ li a {
 .explore {
     position: relative;
     margin: 13px 0;
-    padding: 5px 15px!important;
+    padding: 5px 5px!important;
     font-size: 14px;
     font-family: sans-serif;
     font-size: 0.9em;
@@ -214,7 +223,7 @@ li a {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
-    right: 200px;
+    right: 220px;
     top: 5;
 
 }
@@ -223,15 +232,8 @@ li a {
     border: none;
     background-color: transparent;
     font-size: 14px;
+    cursor: pointer;
 }
-
-.show {
-    display: block;
-}
-
-
-
-
 
 
 #login {
@@ -254,7 +256,7 @@ li a {
     flex-direction:column; 
     justify-content:center; 
     align-items:center;
-    /* background-image: url(https://images.unsplash.com/photo-1465138456624-660a77cb151f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80); */
+    background-image: url(https://images.unsplash.com/photo-1465138456624-660a77cb151f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
     background-size:cover;
     background-position: center;
     position: relative;
@@ -296,5 +298,18 @@ h2 {
 
 .images {
     height: 300px;
-    background-color: salmon;
+    background-color: dodgerblue;
+}
+
+.display-right button {
+    border: none;
+    padding: 10px 30px;
+    background-color: #02be6e!important;
+    color: #fff!important;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.display-right button:hover {
+    background-color: #3f9a4f !important;
 }

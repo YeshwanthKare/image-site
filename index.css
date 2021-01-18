@@ -13,7 +13,7 @@
 
 .dropdown_container {
     background-color: #eaecee;
-    height: 220px;
+    height: 210px;
     width: 475px;
     display: flex;
 }
@@ -22,12 +22,13 @@
     text-align: left;
     padding-top: 20px;
     z-index: 100;
+    overflow: hidden;
 }
 
 .media b {
     margin-left: 28px;
     color: #555;
-
+    display: flex
 }
 
 .media li {
@@ -41,6 +42,7 @@
 .community {
     text-align: left;
     padding: 20px 20px;
+    width: fit-content;
 }
 
 .community b {
@@ -56,6 +58,7 @@
 .about {
     text-align: left;
     padding: 24px 0px;
+    width: fit-content;
 }
 
 .about b {
@@ -162,6 +165,37 @@ body {
     }
 }
 
+@media only screen and (min-width:800px){
+    .hide-nav-option {
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+        max-height: 0;
+    }
+
+    .menu-bar {
+        display: none;
+    }
+
+    .media {
+        position: relative;
+        max-width: 175px;
+        min-width: 170px;
+        width: 100%;
+    }
+
+    .media-option {
+        position: absolute;  
+        width: 175px;
+        top: 40px;
+        left: 0px;
+        right: 10px;
+
+    }
+
+    
+}
+
 
 .logo {
     left: 0;
@@ -223,7 +257,7 @@ li a {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
-    right: 220px;
+    right: 280px;
     top: 5;
 
 }

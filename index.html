@@ -6,7 +6,10 @@
         <title>Pixabay</title>
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+        <script src="index.js"></script>
         <!-- <script src="nav-dropdown.js"></script> -->
         <style>
             .show {
@@ -31,15 +34,20 @@
                             <div class="dropdown_container">
                                <ul class="media">
                                     <b>Media</b>
-                                    <li><a href="">Photos</a></li>
-                                    <li><a href="">Illustrations</a></li>
-                                    <li><a href="">Vectors</a></li>
-                                    <li><a href="">Videos</a></li>
-                                    <hr>
-                                    <li><a href="#">Editor's Choice</a></li>
-                                    <li><a href="#">Popular Images</a></li>
-                                    <li><a href="#">Popular Videos</a></li>
-                                    <li><a href="#">Popular Searches</a></li>
+                                    <li><a class="hide-nav-option" href="">Photos</a></li>
+                                    <li><a class="hide-nav-option" href="">Illustrations</a></li>
+                                    <li><a class="hide-nav-option" href="">Vectors</a></li>
+                                    <li><a class="hide-nav-option" href="">Videos</a></li>
+                                    <hr class="hide-nav-option">
+                                    <li>
+                                        <ul class="media-option">
+                                            <li><a href="#">Editor's Choice</a></li>
+                                            <li><a href="#">Popular Images</a></li>
+                                            <li><a href="#">Popular Videos</a></li>
+                                            <li><a href="#">Popular Searches</a></li>
+                                        </ul>
+                                    </li>                                   
+                                    
                                 </ul>
                                 <hr>
                                 <ul class="community">
@@ -75,7 +83,7 @@
                     </div>
                     <li class="display-right join nav-pad"><a href="#">Join</a></li>
                     <li class="display-right nav-pad"><button class="upload_button"><i class="fas fa-upload"></i> Upload</button></li>
-                    <li>
+                    <li class="menu-bar">
                         <a href="">
                             <i class="fas fa-bars"></i>
                         </a>
@@ -125,8 +133,11 @@
                 }
             });
             dropdownBtn.addEventListener('blur', () => {
-                menuContent.style.display = '';
+                setTimeout(function(){
+                    menuContent.style.display = '';
+                }, 100);
             });
+                
         </script>            
     </body>
 </html>

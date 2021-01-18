@@ -163,6 +163,10 @@ body {
     .nav-hide {
         display: none;
     }
+
+    
+
+    
 }
 
 @media only screen and (min-width:800px){
@@ -259,6 +263,7 @@ li a {
     z-index: 10;
     right: 280px;
     top: 5;
+    transition: all ease 0.25s;
 
 }
 

@@ -29,7 +29,7 @@
                 </ul>
                 <ul class="nav-right">
                     <li>
-                        <div class="explore"><button class="explore-btn nav-pad"><a>Explore<i class="fas fa-angle-down"></i></a></button></div> 
+                        <div class="explore"><button class="explore-btn nav-pad nav-hide"><a>Explore<i class="fas fa-angle-down"></i></a></button></div> 
                         <div id="exp-drp-dwn" class="explore_dropdown">
                             <div class="dropdown_container">
                                <ul class="media">
@@ -82,9 +82,9 @@
                         <hr style="display: inline; width: 100%; position: relative; color: #adb5bd !important;">
                     </div>
                     <li class="display-right join nav-pad"><a href="#">Join</a></li>
-                    <li class="display-right nav-pad"><button class="upload_button"><i class="fas fa-upload"></i> Upload</button></li>
+                    <li class="display-right nav-pad"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></li>
                     <li class="menu-bar">
-                        <a href="">
+                        <a href="#">
                             <i class="fas fa-bars"></i>
                         </a>
                     </li>
@@ -123,21 +123,7 @@
             
         </div>
         <script>
-            let dropdownBtn = document.querySelector('.explore-btn');
-            let menuContent = document.querySelector('.explore_dropdown');
-            dropdownBtn.addEventListener('click',()=>{
-                if(menuContent.style.display===""){
-                    menuContent.style.display="block";
-                } else {
-                    menuContent.style.display="";
-                }
-            });
-            dropdownBtn.addEventListener('blur', () => {
-                setTimeout(function(){
-                    menuContent.style.display = '';
-                }, 100);
-            });
-                
+                            
         </script>            
     </body>
 </html>

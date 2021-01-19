@@ -77,6 +77,7 @@
 
 .social_icons .icon{
     display: inline-block;
+    padding: 0;
     
 }
 
@@ -157,6 +158,11 @@ body {
     font-weight: 400;
 }
 
+.menu-bar {
+    font-size: 24px;
+    margin-left: -18px;
+}
+
 
 
 @media only screen and (max-width: 860px) {
@@ -164,6 +170,36 @@ body {
         display: none;
     }
 
+    .explore {
+        position: relative;
+    }
+
+    .explore_dropdown {
+        position: absolute;
+        right: -22px !important;
+        top: 60px !important;
+        
+        
+    }
+
+    .dropdown_container {
+        /* position: absolute; */
+        top: 5;
+        background-color: #eaecee;
+        height: 380px;
+        width: 488px;
+        display: flex;
+        /* padding-left: 200px !important; */
+    }
+
+    .media {
+        text-align: left;
+    }
+
+    .media-option {
+        text-align: left;
+        margin-left: -16px;
+    }
     
 
     
@@ -197,7 +233,6 @@ body {
 
     }
 
-    
 }
 
 
@@ -261,8 +296,8 @@ li a {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
-    right: 280px;
-    top: 5;
+    right: 290px;
+    top: 60px;
     transition: all ease 0.25s;
 
 }

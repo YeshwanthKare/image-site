@@ -36,6 +36,11 @@
     color: bisque;
 }
 
+.media li a:hover {
+    background-color:#555;
+    color: #fff !important;
+}
+
 
 
 
@@ -53,6 +58,11 @@
 .community li {
     padding: 10px 15px;
     text-align: left;
+}
+
+.community li a:hover {
+    background-color: #555;
+    color: #fff !important;
 }
 
 .about {
@@ -74,6 +84,10 @@
     
 }
 
+.about li a:hover{
+    background-color: #555;
+    color: #fff !important;
+}
 
 .social_icons .icon{
     display: inline-block;

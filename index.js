@@ -1,3 +1,7 @@
+window.onload = () => {
+    dropDown();
+}
+
 function dropDown (){
     let dropdownBtn = document.querySelector('.explore-btn');
     let menuContent = document.querySelector('.explore_dropdown');
@@ -36,4 +40,4 @@ function dropDown (){
                     
     });
 }
-dropDown();
+// dropDown();

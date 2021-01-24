@@ -637,4 +637,12 @@ select {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 17px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.images .images_container img{
+    /* background-size: cover; */
+    width: auto;
+    height: auto;
 }

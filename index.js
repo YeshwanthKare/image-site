@@ -1,5 +1,6 @@
 window.onload = () => {
     dropDown();
+    imageFetch();
 }
 
 function dropDown (){
@@ -40,4 +41,24 @@ function dropDown (){
                     
     });
 }
-// dropDown();
+
+imageFetch = () => {
+    let image = fetch("https://pixabay.com/api/?key=19669519-a64bb35ec2ecb1a51d76889be&image_type=vector");
+    image.then((response) => {
+        return response.json();
+    })
+    .then((data) =>{
+        addImage(data.hits);
+        console.log(data.hits)
+    })
+}
+
+addImage = (images) => {
+    var imageEl = document.querySelector(".images_container");
+    for(let image of images){
+        imageEl.innerHTML += `
+
+            <img src="${image.webformatURL}" alt="">
+        ` 
+    } 
+}

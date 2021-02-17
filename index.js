@@ -54,11 +54,28 @@ imageFetch = () => {
 }
 
 addImage = (images) => {
-    var imageEl = document.querySelector(".images_container");
+    var imageEl = document.querySelector(".wrapper");
     for(let image of images){
         imageEl.innerHTML += `
-
-            <img src="${image.webformatURL}" alt="">
+            <div class="image">
+                <img src="${image.webformatURL}" alt="">
+                <div class="author_container">
+                    <div id="author">${image.user}</div>
+                    <div class="votes">
+                        <div class="comment">
+                            <span id="comment">${image.comments} <i class="far fa-comment"></i></span>
+                        </div>
+                        <div class="like">
+                            <span id="like"> ${image.likes} <i class="far fa-heart"></i></span>
+                        </div>
+                        <div class="favourite">
+                            <span id="favourite">${image.favorites} <i class="far fa-star"></i></span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+                        
         ` 
     } 
 }

@@ -63,13 +63,13 @@ addImage = (images) => {
                     <div id="author">${image.user}</div>
                     <div class="votes">
                         <div class="comment">
-                            <span id="comment">${image.comments} <i class="far fa-comment"></i></span>
+                            <span id="comment">${image.comments} <a href="#"><i class="far fa-comment"></i></a></span>
                         </div>
                         <div class="like">
-                            <span id="like"> ${image.likes} <i class="far fa-heart"></i></span>
+                            <span id="like"> ${image.likes} <a href="#"><i class="far fa-heart"></i></a></span>
                         </div>
                         <div class="favourite">
-                            <span id="favourite">${image.favorites} <i class="far fa-star"></i></span>
+                            <span id="favourite">${image.favorites} <a href="#"><i class="far fa-star"></i></a></span>
                         </div>
                         
                     </div>

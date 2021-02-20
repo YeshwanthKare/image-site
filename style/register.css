@@ -1,0 +1,200 @@
+.register-header {
+    box-shadow: 0 6px 6px rgba(0,0,0, 0.34)
+}
+
+.register_search_arrow {
+    position: relative;
+    top: 18px;
+    left: -10px;
+    margin-left: 10px;
+    
+}
+
+.register_arrow {
+    position: absolute;
+    right: 8px;
+    bottom: 65px;
+    pointer-events: none;
+    left: 120px;
+}
+
+#register_option {
+    position: relative;
+    top: -15px;
+    left: 0;
+    font-size: 13.9px;
+    width: 130px;
+}
+
+.register_select select option {
+    font-size: 14px;
+}
+
+.register_select {
+    position: absolute;
+    left: 372px;
+    bottom: 2.6px;
+    width: 135px;
+    background-color: #fff;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.register_search{
+    position: absolute;
+    height: 30px;
+    top: 18px;
+    min-width: 400px;
+    max-width: 510px;
+    width: 100%;
+    display:flex;
+    margin-left: 40px;
+    background: #f7f7f7;
+}
+
+#register_Search {
+    height: 25px;
+    width: 330px;
+    position:relative;
+    left: 35px;
+    border: none;
+    top: 3px;
+    background:#f7f7f7;
+}
+
+.feature_search_register {
+    position: absolute;
+    top: 4px;
+    padding: 2px 4px;
+    margin-left: 4px;
+    padding-bottom: 2px;
+}
+
+.register_main {
+    padding: 0;
+    margin: 0;
+    height: 800px;
+    background-color: #f56;
+}
+
+.register_container {
+    margin: auto;
+    border: 1px solid #f3c4e2;
+    background: aliceblue;
+    display: flex;
+    min-width: 250px;
+    max-width: 340px;
+    width: 100%;
+    position: relative;
+    top: 100px;
+    height: 500px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.register_login {
+    text-decoration: none;
+    font-size: 24px;
+    padding: 2px 5px;
+}
+
+.register_join {
+    text-decoration: none;
+    font-size: 24px;
+    padding: 2px 5px;
+}
+
+.social_icons {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+    left: 18px;
+}
+
+.social_icons a button {
+    padding: 4px 10px;
+    border-radius: 18px;
+}
+
+.social_icons a:nth-child(1) {
+    margin-right: 20px;
+}
+
+.social_icons a:nth-child(2) {
+    margin-left: 20px;
+}
+
+.register_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 300px;
+    left: 24px;
+}
+
+.register_form input:nth-child(3) {
+    position: absolute;
+    bottom: 75px;
+    left: 4px;
+    height: 30px;
+    width: 280px;
+}
+
+.register_form input:nth-child(2){
+   position: absolute;
+    bottom: 120px;
+    left: 4px;
+    height: 30px;
+    width: 280px;
+}
+
+.register_form input:nth-child(1) {
+    position: absolute;
+    bottom: 165px;
+    left: 4px;
+    height: 30px;
+    width: 280px;
+} 
+
+#register_submit{  
+    padding: 13px 135px 13px 135px;
+    border-radius: 18px;
+    left: 24px;
+    background: cornflowerblue;
+    border: none;
+    cursor: pointer;
+}
+
+.hr_down {
+    position: absolute;
+    bottom: 54px; 
+    min-width: 200px;
+    max-width: 278px;
+    width: 100%;
+    left: 3px;
+    border: 5px solid #adb5bd;
+}
+
+.register_terms {
+    background: #f7f;
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+    height: 50px;
+    text-align: justify;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

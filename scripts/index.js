@@ -43,7 +43,8 @@ function dropDown (){
 }
 
 imageFetch = () => {
-    let image = fetch("https://pixabay.com/api/?key=19669519-a64bb35ec2ecb1a51d76889be&image_type=vectors");
+    let key = config.MY_KEY;
+    let image = fetch(`https://pixabay.com/api/?key=${key}&image_type=vectors`);
     image.then((response) => {
         return response.json();
     })

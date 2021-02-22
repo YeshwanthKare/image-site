@@ -764,6 +764,7 @@ body{
     font-family: monospace;
     width: auto;
     padding: 10px 10px 8px 6px;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 .image:hover .author_container {

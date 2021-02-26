@@ -418,7 +418,7 @@ li a {
     align-items:center;
     flex-direction: column;
     position: relative;
-    background-image: url(https://images.unsplash.com/photo-1494707633652-f43986561810?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1524&q=80);
+    background-image: url(https://images.unsplash.com/photo-1598449356475-b9f71db7d847?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
     background-position: center;
     background-size: cover;
 }
@@ -815,7 +815,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     grid-auto-rows: minmax(280px, 310px);
-    grid-gap: 6px;
+    grid-gap: 10px;
     grid-auto-flow: dense !important;
     position: relative;
 }

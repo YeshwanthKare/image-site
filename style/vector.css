@@ -1,3 +1,90 @@
+.main .vector_feature .search_container .search_arrow {
+    margin-top: -1px;
+    margin-left: 6px;
+    font-size: 1.2em;
+    color: darkgray;
+}
+
+
+@media only screen and (max-width: 760px) {
+    .main .vector_feature .search_container {
+        min-width: 650px !important;
+        max-width: 660px;
+        width: 100%;
+    }
+
+    .main .vector_feature h4 {
+        margin-left: 20px;
+    }
+     
+    .main .vector_feature .search_container .feature_search {
+        margin-left: 25px;
+    }
+
+    .main .vector_feature .search_container .default_item {
+        position: absolute;
+        display: flex;
+        right: 20px;
+        height: 40px;
+        width:70px;
+        justify-content: center;
+        align-items: center;
+        padding-left: 8px;
+        padding-right: 8px;   
+        margin-right: -10px;     
+        /* border: none; */
+        background-color: transparent;
+        
+    }
+
+   .main .vector_feature .search_container .default_item .search_arrow {
+       margin-left: 4px;
+   }
+
+    .main .vector_feature .popular_Images_line {
+        margin-left: 30px
+    }
+
+    .main .vector_feature .search_container #Search {
+        /* border: 1px solid black; */
+        width: 450px;
+        display:flex;
+        position: absolute;
+        margin-right: 100px;
+        /* border: none; */
+    }
+
+    .main .vector_feature .search_container .feature_search {
+        position: absolute;
+        z-index: 1;
+        left: 2px;
+    }
+
+    select {
+        /* // A reset of styles, including removing the default dropdown arrow */
+        appearance: none;
+        /* // Additional resets for further consistency */
+        background-color: transparent;
+        border: none;
+        padding: 20px 12px 15px 10px;
+        margin-left: 8px;
+        width: 140px;
+        font-family: inherit;
+        font-size: 1rem;
+        cursor: inherit;
+        line-height: inherit;
+        outline: none;
+        position: absolute;
+        right: 20px;
+        z-index: 2;
+        top: 3px;
+        /* color: thistle; */
+        padding-left: 14px!important;
+    }
+}
+
+
+
 .vector_feature {
     height: 550px;
     display: flex;

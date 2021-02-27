@@ -44,7 +44,7 @@ function dropDown (){
 
 imageFetch = () => {
     let key = config.MY_KEY;
-    let image = fetch(`https://pixabay.com/api/?key=${key}&q=italy&image_type=all`);
+    let image = fetch(`https://pixabay.com/api/?key=${key}&q=all&image_type=all`);
     image.then((response) => {
         return response.json();
     })

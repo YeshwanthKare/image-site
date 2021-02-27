@@ -5,7 +5,7 @@ window.onload = () => {
 
 imageFetch = () => {
     let key = config.MY_KEY;
-    let image = fetch(`https://pixabay.com/api/?key=${key}&q=nature&image_type=vector`);
+    let image = fetch(`https://pixabay.com/api/?key=${key}&q=all&image_type=vector`);
     image.then((response) => {
         return response.json();
     })

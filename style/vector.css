@@ -168,6 +168,19 @@
     height: 100%;
 }
 
+.images .images_container .vector_wrapper{
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-auto-rows: minmax(280px, 310px);
+    grid-gap: 20px;
+    grid-auto-flow: dense !important;
+    position: relative;
+}
+
 
 .images .images_container .vector_wrapper .image:nth-child(6){
     grid-column: span 2;

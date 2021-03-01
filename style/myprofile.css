@@ -1,0 +1,90 @@
+.myprofile_edit button {
+    border: none;
+    background: #0a88d3;
+    padding: 4px 6px;
+    border-radius: 8px;
+    color: #fff;
+    position: absolute;
+    top: 85px;
+    z-index: 3;
+    right: 25px;
+    cursor: pointer;
+}
+
+.myprofile_edit button:hover {
+    background-color: #0078e7;
+}
+
+
+.myprofile_main {
+    height: 320px;
+    width: 100%;
+}
+
+.myprofile_container {
+    height: 320px;
+    width: 100%;
+    background-color:burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-image: url(https://wallpaperaccess.com/full/754632.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.myprofile_container::after {
+    position: absolute;
+    content: '';
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.myprofile_container > * {
+    z-index: 1;
+}
+
+.myprofile_name {
+    color: white;
+    transform: translate3d(0px, -16px, 0px);
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.myprofile_place {
+    color: white;
+    transform: translate3d(0, -10px, 0);
+    font-family: sans-serif;
+}
+
+.myprofile_image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: white;
+    background-image: url(https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.myprofile_images {
+    margin: 20px 16px 10px 16px;
+}
+
+.myprofile_images_wrapper {
+    height: 500px;
+    width: 100%;
+    display: grid;
+    background: violet;
+}
+
+.myprofile_images_wrapper img {
+    width: auto;
+    height: 350px;
+}
+

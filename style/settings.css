@@ -1,0 +1,75 @@
+.body_settings .body_settings_container ul li {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 20px 20px;
+}
+
+.body_settings .body_settings_container ul li:nth-child(2) {
+    border-bottom: 2px solid #1e90ff;
+}
+
+.body_settings .body_settings_container ul li:nth-child(3) {
+    position: relative;
+    left: 1040px;
+}
+
+.personal-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px
+}
+
+.left_column, .right_column {
+    width: 630px;
+    height: 500px;
+    position: relative;
+    /* border: 1px solid #ccc; */
+}
+
+.left_column {
+    margin-right: 20px;
+}
+
+.profile_image_box {
+    height: 180px;
+    width: 180px;
+    background-color: #4c6f4d;
+    position: relative;
+    left: 100px;
+    bottom: 10px;
+}
+
+input#user_heading {
+    /* float: right; */
+    height: 30px;
+    
+}
+
+.settings_save {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    background-color: #aaa;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings_save button {
+    padding: 10px 100px;
+    background-color: #1e90ff;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.settings_save button:hover {
+    background-color: #1e9aff;
+}
+
+.settings_save button a {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}

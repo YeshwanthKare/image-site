@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="/style/index.css">
         <link rel="stylesheet" href="/style/register.css">
         <link rel="stylesheet" href="/style/login.css">
-        <link rel="stylesheet" href="/style/settings.css">
+        <!-- <link rel="stylesheet" href="/style/settings.css"> -->
+        <link rel="stylesheet" href="/style/upload.css">
         <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
         <script src="/scripts/index.js"></script>
     </head>
@@ -68,31 +69,22 @@
                                 <ul class="about">
                                     <b>About</b>
                                     <li><a class="about_us" href="#">About Us</a></li>
-                                    <!-- <li><a class="language_icon" href="#"><i class="fas fa-globe"></i> Language</a></li> -->
                                     <hr class="my-hr-line">                                    
                                     <li class="social_icons">
-                                    
                                         <a class="icon" href="https://www.facebook.com/yesh.surya.5" target="_blank"><i class="fab fa-facebook-square"></i></a>
                                         <a class="icon" href="https://www.instagram.com/yeshwanth_nadh/" target="_blank"><i class="fab fa-instagram"></i></a>
                                         <a class="icon" href="https://twitter.com/yeshsuriya" target="_blank"><i class="fab fa-twitter"></i></a>
                                     </li>
-                                
-                                
                                 </ul>
                             </div>
                         </div>
-                            
-                        
-
-                        
                     </li>
-                    <!-- <i class="fas fa-angle-down"></i> -->
                     <li class="display-right nav-pad"><a id="login" href="/pages/login.html">Log in</a></li>
                     <div>
                         <hr style="display: inline; width: 100%; position: relative; color: #adb5bd !important;">
                     </div>
                     <li class="display-right join nav-pad"><a href="/pages/register.html">Join</a></li>
-                    <li class="display-right nav-pad"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></li>
+                    <li class="display-right nav-pad"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
                     <li class="menu-bar">
                         <a href="#">
                             <i class="fas fa-bars"></i>
@@ -102,9 +94,8 @@
 
             </div>
         </header>
-        
-        <div class="body_settings">
-            <div class="body_settings_container">
+        <div class="upload_body">
+            <div class="upload_container">
                 <ul class="nav_settings">
                     <li><a href="/pages/upload.html">Uploads</a></li>
                     <li class="border-setting"><a href="/pages/settings.html">Settings</a></li>
@@ -112,52 +103,15 @@
                 </ul>
             </div>
             <hr>
-
-            <div class="personal-data">
-                <div class="left_column">
-                    <span id="personal">Personal Data</span>
-                    <div class="username_setting"><span>Username</span>
-                        <!-- <div class="username_heading">Username</div> -->
-                        <input id="user_heading" type="text">
-                    </div>
-                    <div class="profile_image_setting"><span id="profile">Profile Image</span>
-                        <!-- <div class="profile_image_heading">Profile Image</div> -->
-                        <div class="profile_image_box"></div>
-                    </div>
-                    <div class="place_setting">
-                        <div class="city_setting"><span id="city">City</span>
-                            <!-- <div class="city_heading">City</div> -->
-                            <input id="city_name" type="text">
-                        </div>
-                        <div class="country_setting"><span id="country">Country</span>
-                            <!-- <div class="country_heading">Country</div> -->
-                            <input id="country_name" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="right_column">
-                    <span id="option-heading">Options</span>
-                    <div class="email_setting">
-                        <div class="email-setting-header">Email Address</div>
-                        <div class="current_email">Imagegram@gram.com</div>
-                        <a href="">Imagegram@gram.com</a>
-                    </div>
-                    <div class="signin_options">
-                        <div class="signin_header">Sign in</div>
-                        <button id="facebook-button"><a href="">Facebook</a></button>
-                        <button><a href="">Google</a></button>
-                    </div>
-                    <div class="extra_setting">
-                        <div class="more_settings">More</div>
-                        <div id="set-password"><a id="set-password" href="">Change Password</a></div>
-                        <div id="del-account"><a id="del-account" href="">Deactivate account</a></div>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <div class="settings_save">
-            <button><a href="">Save</a></button>
+        <div class="upload_image">
+            <form id="upload-user-image">
+                <label id="tag" for="tags">Tags:</label>
+                <textarea id="hash_keyword" type="textarea" placeholder="please allocate the hash (#) tag before the number of keywords that describes the image seperated by a space"></textarea>
+                <input id="image_upload" type="file" id="myFile" name="user-image">
+                <input id="submit" type="button" value="Submit">
+            </form>
+            
         </div>
     </body>
 </html>

@@ -1,0 +1,48 @@
+.upload_body .upload_container ul li {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 20px 20px;
+}
+
+.upload_body .upload_container ul li:nth-child(1) {
+    border-bottom: 2px solid #1e90ff;
+}
+
+.upload_body .upload_container ul li:nth-child(3) {
+    position: relative;
+    left: 1040px;
+}
+
+form#upload-user-image {
+    position: relative;
+    top: 60px;
+    left: 40px;
+    display: flex;
+}
+
+#hash_keyword {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    height: 100px;
+    width: 800px;
+    font-size: 18px;
+    padding: 8px 0 0 8px;
+}
+
+#image_upload {
+    position: absolute;
+    top: 180px;
+}
+
+#submit {
+    position: absolute;
+    top: 240px;
+    border: none;
+    padding: 8px 40px;
+    border-radius: 14px;
+    background-color: #1e90ff;
+    color: #fff;
+    cursor: pointer;
+}
+

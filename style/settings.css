@@ -24,11 +24,22 @@
     width: 630px;
     height: 500px;
     position: relative;
-    /* border: 1px solid #ccc; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    border: 1px solid #ccc;
 }
 
 .left_column {
     margin-right: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .profile_image_box {
@@ -38,12 +49,38 @@
     position: relative;
     left: 100px;
     bottom: 10px;
+    background-image: url(https://profiles.utdallas.edu/img/default.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.profile_image_box::after {
+    content: 'Upload picture';
+    height: 22px;
+    width: 100%;
+    background-color: #aaa;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+}
+
+.profile_image_box:hover::after {
+    background-color: cadetblue;
+    color: black;
 }
 
 input#user_heading {
     /* float: right; */
     height: 30px;
-    
+    width: 250px;
+    transform: translateX(22px);
+    font-size: 18px;
+    padding-left: 8px;
 }
 
 .settings_save {
@@ -73,3 +110,111 @@ input#user_heading {
     text-decoration: none;
     color: white;
 }
+
+#personal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#hr-up {
+    position: absolute;
+    top: 20px;
+}
+
+.username_setting {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+}
+
+.profile_image_setting {
+    position: absolute;
+    left: 20px;
+    top: 130px;
+}
+
+.place_setting {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+}
+
+.city_setting input, .country_setting input {
+    height: 30px;
+    width: 265px;
+    font-size: 18px;
+    padding-left: 8px;
+}
+
+.city_setting input {
+    transform: translateX(66px);
+}
+
+.country_setting input {
+    transform: translateX(36px);
+}
+
+.country_setting {
+    position: relative;
+    bottom: -40px;
+}
+
+#option-heading {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.email-setting-header {
+    position:absolute;
+    top: 60px;
+    left: 20px;
+}
+
+.current_email {
+    position: absolute;
+    top: 60px;
+    transform: translateX(-80px)
+}
+
+.email_setting a {
+    position: absolute;
+    top: 90px;
+    transform: translateX(-80px);
+}
+
+.signin_header {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+}
+
+.signin_options button{
+    /* position: absolute; */
+    transform: translate3d(-90px, -95px,0);
+    padding: 4px 8px;
+    border-radius: 14px;
+    border: 1px solid #555;
+    background: #aaa;
+}
+
+.signin_options button a {
+    color: #222;
+}
+
+.more_settings {
+    position: absolute;
+    top: 210px;
+    left: 20px;
+}
+
+#set-password {
+    transform: translate3d(-160px,-36px,0);
+}
+
+#del-account {
+    transform: translate3d(-160px, -30px, 0);
+}
+
+

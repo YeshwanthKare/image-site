@@ -10,14 +10,13 @@
 
 .upload_body .upload_container ul li:nth-child(3) {
     position: relative;
-    left: 1040px;
+    left: 1000px;
 }
 
 form#upload-user-image {
     position: relative;
     top: 60px;
     left: 40px;
-    display: flex;
 }
 
 #hash_keyword {
@@ -25,18 +24,24 @@ form#upload-user-image {
     top: 30px;
     left: 0px;
     height: 100px;
-    width: 800px;
+    width: 600px;
     font-size: 18px;
     padding: 8px 0 0 8px;
+}
+
+html, body {
+    
 }
 
 #image_upload {
     position: absolute;
     top: 180px;
+    left: 0px;
 }
 
 #submit {
     position: absolute;
+    left: 0px;
     top: 240px;
     border: none;
     padding: 8px 40px;
@@ -46,3 +51,6 @@ form#upload-user-image {
     cursor: pointer;
 }
 
+.main-header .nav-right li .upload_button {
+    margin-left: -20px;
+}

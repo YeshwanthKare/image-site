@@ -114,6 +114,7 @@ body {
     margin: 0;
     background-color: none;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .main-header {
@@ -348,7 +349,7 @@ body {
 }
 
 .nav-right .nav-pad {
-    padding: 0 8px !important;
+    padding: 0 8px;
 }
 
 

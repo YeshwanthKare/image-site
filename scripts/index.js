@@ -1,6 +1,7 @@
 window.onload = () => {
     dropDown();
     imageFetch();
+    imageDrop();
 }
 
 function dropDown (){
@@ -19,11 +20,6 @@ function dropDown (){
         }, 100);
     });
 
-                // let dropDown = document.getElementsByClassName("explore_dropdown");
-                // for(let i = 0; i < dropDown.length;i++){
-                //     document.getElementsByClassName("menu-bar")[0].append(dropDown[i]);
-                // }
-
     let barDropdownBtn = document.querySelector('.menu-bar');
     let barMenuContent = document.querySelector(".explore_dropdown");
     barDropdownBtn.addEventListener('click', ()=> {
@@ -40,6 +36,27 @@ function dropDown (){
         },100)
                     
     });
+}
+
+function imageDrop () {
+    let profilePic = document.querySelector(".user_profile_pic");
+    let profileDropDown = document.querySelector(".user_profile_dropdown");
+    console.log(profilePic);
+    console.log(profileDropDown)
+
+    profilePic.addEventListener('click', () => {
+        if(profileDropDown.style.display === ""){
+            profileDropDown.style.display= "block";
+        }else {
+            profileDropDown.style.display="";
+        }
+    });
+
+    profilePic.addEventListener('focusout', () => {
+        setTimeout(function() {
+            profileDropDown.style.display='';
+        },100)
+    })
 }
 
 imageFetch = () => {

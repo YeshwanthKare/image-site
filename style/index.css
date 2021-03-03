@@ -156,6 +156,35 @@ body {
     color: darkgray;
 }
 
+.main-header .nav-right li.user_profile_pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #4b0082;
+    background-image: url(https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    /* display: none; */
+}
+
+.main-header .nav-right li.user_profile_dropdown {
+    height: 170px;
+    width: auto;
+    background-color: #eaecee;
+    position: absolute;
+    transform: translate3d(220px, 116px,0);
+    z-index: 4;
+    display: none;
+}
+
+.main-header .nav-right li.user_profile_dropdown ul li {
+    padding: 12px 20px 10px 20px;
+    margin: auto;
+}
+
+
+
 .menu-bar {
     font-size: 24px;
     margin-left: -18px;

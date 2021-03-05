@@ -15,6 +15,10 @@
     background-color: #0078e7;
 }
 
+.user_profile_dropdown {
+    left: -170px;
+}
+
 
 .myprofile_main {
     height: 320px;

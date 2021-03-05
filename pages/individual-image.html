@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/style/login.css">
     <link rel="stylesheet" href="/style/individual.css">
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/scripts/index.js"></script>
 </head>
 <body>
@@ -133,6 +134,18 @@
             </div>
         </div>
     </div>
-    
+   <script>
+        $(document).ready(() => {
+            $('.user_profile_pic').click((e) => {
+                e.stopPropagation();
+                $('.user_profile_dropdown').fadeToggle('fast');
+            })
+
+            $(document).click(() => {
+                $('.user_profile_dropdown').hide();
+            })
+            
+        })
+    </script> 
 </body>
 </html>

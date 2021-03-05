@@ -217,4 +217,8 @@ input#user_heading {
     transform: translate3d(-160px, -30px, 0);
 }
 
+.user_profile_dropdown {
+    left: -170px;
+}
+
 

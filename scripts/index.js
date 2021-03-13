@@ -7,10 +7,10 @@ const dropDown = () => {
 
     dropDownButtons (".explore-btn", ".explore_dropdown")
     dropDownButtons (".menu-bar", ".explore_dropdown")
-    // dropDownButtons(".user_profile_pic", ".user_profile_dropdown")
+    
 }
 
-function dropDownButtons (button_selector, dropdown_selector) {
+const dropDownButtons = (button_selector, dropdown_selector) => {
     let button = document.querySelector(button_selector);
     let dropdown = document.querySelector(dropdown_selector);
 
@@ -31,7 +31,7 @@ function dropDownButtons (button_selector, dropdown_selector) {
 
 async function imageFetch() {
     let key = config.MY_KEY;
-    return await fetch(`https://pixabay.com/api/?key=${key}`)
+    return await fetch(`https://pixabay.com/api/?key=${key}&image_type=all`)
     // &q=all&image_type=all
     .then((response) => {
         return response.json();
@@ -44,6 +44,10 @@ async function imageFetch() {
 
 const showImage = (images) => {
     var imageEl = document.querySelector(".wrapper");
+    let postLink = document.createElement('a');
+    postLink.setAttribute("href", "/pages/individual-image.html")
+    postLink.classList.add("post-link");
+    console.log(postLink)
     for(let image of images){
         imageEl.innerHTML += `
             <div class="image">
@@ -67,6 +71,8 @@ const showImage = (images) => {
                         
         ` 
     } 
+
+
 
     
 }

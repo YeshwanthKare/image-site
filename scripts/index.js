@@ -1,58 +1,48 @@
 window.onload = () => {
     dropDown();
     imageFetch();
-    // imageDrop();
 }
 
-function dropDown (){
-    let dropdownBtn = document.querySelector('.explore-btn');
-    let menuContent = document.querySelector('.explore_dropdown');
-    dropdownBtn.addEventListener('click',()=>{
-        if(menuContent.style.display===""){
-            menuContent.style.display="block";
-        } else {
-            menuContent.style.display="";
-        }
-    });
-    dropdownBtn.addEventListener('focusout', () => {
-        setTimeout(function(){
-            menuContent.style.display = '';
-        }, 100);
-    });
+const dropDown = () => {
 
-    let barDropdownBtn = document.querySelector('.menu-bar');
-    let barMenuContent = document.querySelector(".explore_dropdown");
-    barDropdownBtn.addEventListener('click', ()=> {
-        if(barMenuContent.style.display===""){
-            barMenuContent.style.display="block";
-        } else {
-            barMenuContent.style.display="";
-        }
-    });
+    dropDownButtons (".explore-btn", ".explore_dropdown")
+    dropDownButtons (".menu-bar", ".explore_dropdown")
+    // dropDownButtons(".user_profile_pic", ".user_profile_dropdown")
+}
 
-    barDropdownBtn.addEventListener('focusout', () => {
-        setTimeout(function() {
-            // dropdown.style.display = '';
-            menuContent.style.display = '';
-            barMenuContent.style.display = '';
+function dropDownButtons (button_selector, dropdown_selector) {
+    let button = document.querySelector(button_selector);
+    let dropdown = document.querySelector(dropdown_selector);
+
+    button.addEventListener("click", () => {
+        if(dropdown.style.display === ""){
+            dropdown.style.display = "block";
+        }else {
+            dropdown.style.display = "";
+        }
+    })
+
+    button.addEventListener("focusout", () => {
+        setTimeout(() => {
+            dropdown.style.display = "";
         },100)
-                    
-    });
+    })
 }
 
-imageFetch = () => {
+async function imageFetch() {
     let key = config.MY_KEY;
-    let image = fetch(`https://pixabay.com/api/?key=${key}&q=all&image_type=all`);
-    image.then((response) => {
+    return await fetch(`https://pixabay.com/api/?key=${key}`)
+    // &q=all&image_type=all
+    .then((response) => {
         return response.json();
     })
     .then((data) =>{
-        addImage(data.hits);
-        console.log(data.hits)
+        showImage(data.hits);
+        console.log(data)
     })
 }
 
-addImage = (images) => {
+const showImage = (images) => {
     var imageEl = document.querySelector(".wrapper");
     for(let image of images){
         imageEl.innerHTML += `
@@ -77,4 +67,10 @@ addImage = (images) => {
                         
         ` 
     } 
+
+    
 }
+
+
+
+   

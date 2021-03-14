@@ -34,20 +34,29 @@ async function imageFetch() {
     return await fetch(`https://pixabay.com/api/?key=${key}&image_type=all`)
     // &q=all&image_type=all
     .then((response) => {
-        return response.json();
+        if(response.ok) {
+            return response.json();
+        }else {
+            throw new Error("Something went wrong");
+        }
     })
     .then((data) =>{
         showImage(data.hits);
-        console.log(data)
+        console.log(data.hits)
     })
 }
 
+const individualImageFetch = (e) => {
+
+}
+
 const showImage = (images) => {
-    var imageEl = document.querySelector(".wrapper");
-    let postLink = document.createElement('a');
-    postLink.setAttribute("href", "/pages/individual-image.html")
-    postLink.classList.add("post-link");
-    console.log(postLink)
+    wrapperSelector(images, ".wrapper");
+
+}
+
+const wrapperSelector = (images, wrapper_selector) => {
+    var imageEl = document.querySelector(wrapper_selector);
     for(let image of images){
         imageEl.innerHTML += `
             <div class="image">
@@ -67,14 +76,10 @@ const showImage = (images) => {
                         
                     </div>
                 </div>
-            </div>
-                        
-        ` 
-    } 
+            </div> 
+        `
 
-
-
-    
+    }
 }
 
 

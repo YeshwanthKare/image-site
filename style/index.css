@@ -778,7 +778,8 @@ body{
     
 }
 
-.author_container {
+
+.images .images_container .wrapper .image .author_container {
     margin-left: 10px;
     color: #fff;
     display: flex;
@@ -796,9 +797,11 @@ body{
     width: auto;
     padding: 40px 10px 4px 6px;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    /* background-color: seagreen; */
+
 }
 
-.image:hover .author_container {
+.images .images_container .wrapper .image:hover .author_container {
     opacity: 1;
     background: linear-gradient(180deg,transparent, rgba(57, 57, 57, .05),rgba(57,57,57, .61), rgba(57,57,57, .61));
     bottom: 0px;
@@ -807,14 +810,12 @@ body{
     left: -10px;
     right: 0;
     flex-wrap: wrap-reverse;
+    cursor: pointer;
 }
 
-.image {
-    position: relative;
-    width: 100%;
-    cursor: pointer;
-    border: 1px solid #fef;
-}
+
+
+
 
 #author{
     padding-left: 10px;
@@ -837,12 +838,12 @@ body{
 
 .votes a i:hover {
     background: radial-gradient(#fff 50%, transparent 50%)
-}
+} 
 
-.images .images_container .wrapper{
+.images .images_container .wrapper {
     height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -850,6 +851,7 @@ body{
     grid-gap: 20px;
     grid-auto-flow: dense !important;
     position: relative;
+    /* background-color: salmon; */
 }
 
 .images .images_container .wrapper .image img{
@@ -861,6 +863,13 @@ body{
     padding: 0;
     height: 100%;
 }
+
+.images .images_container .wrapper .image {
+    position: relative;
+    cursor: pointer;
+}
+
+
 
 
 .images .images_container .wrapper .image:nth-child(6){

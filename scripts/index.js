@@ -47,7 +47,8 @@ async function imageFetch() {
 }
 
 const individualImageFetch = (e) => {
-
+    let id = e.target.getAttribute("data-id");
+    console.log(id);
 }
 
 const showImage = (images) => {
@@ -58,26 +59,60 @@ const showImage = (images) => {
 const wrapperSelector = (images, wrapper_selector) => {
     var imageEl = document.querySelector(wrapper_selector);
     for(let image of images){
-        imageEl.innerHTML += `
-            <div class="image">
-                <img src="${image.webformatURL}" alt="">
-                <div class="author_container">
-                    <div id="author">${image.user}</div>
-                    <div class="votes">
-                        <div class="comment">
-                            <span id="comment">${image.comments} <a href="#"><i class="far fa-comment"></i></a></span>
-                        </div>
-                        <div class="like">
-                            <span id="like"> ${image.likes} <a href="#"><i class="far fa-heart"></i></a></span>
-                        </div>
-                        <div class="favourite">
-                            <span id="favourite">${image.favorites} <a href="#"><i class="far fa-star"></i></a></span>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div> 
+
+        let imageElement = document.createElement("div");
+        imageElement.classList.add("image");
+
+        let img = document.createElement("img");
+        img.src = image.webformatURL;
+        img.setAttribute("data-id", image.id);
+
+        img.addEventListener("click", (e) => {
+            individualImageFetch(e);
+            window.location = "../pages/individual-image.html"
+   
+            
+        })
+
+        let authorContainer = document.createElement("div");
+        authorContainer.classList.add("author_container");
+
+        let author = document.createElement("div");
+        author.classList.add("author");
+        author.innerHTML = image.user;
+
+        let votes = document.createElement("div");
+        votes.classList.add("votes");
+
+        let comments = document.createElement("div");
+        comments.classList.add("comment");
+        comments.innerHTML = `
+           <span id="comment">${image.comments} <a href="#"><i class="far fa-comment"></i></a></span>
         `
+
+        let like = document.createElement("div");
+        like.classList.add("like");
+        like.innerHTML = `
+           <span id="like"> ${image.likes} <a href="#"><i class="far fa-heart"></i></a></span>
+        `
+
+        let favorites = document.createElement("div");
+        favorites.classList.add("favourite");
+        favorites.innerHTML = `
+            <span id="favourite">${image.favorites} <a href="#"><i class="far fa-star"></i></a></span>
+        `
+
+        votes.appendChild(comments);
+        votes.appendChild(like);
+        votes.appendChild(favorites);
+
+        authorContainer.appendChild(author)
+        authorContainer.appendChild(votes);
+
+        imageElement.appendChild(img);
+        imageElement.appendChild(authorContainer);
+
+        imageEl.appendChild(imageElement)
 
     }
 }

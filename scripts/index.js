@@ -66,6 +66,7 @@ const individualImageFetch = (e) => {
 
 const showImage = (images) => {
     wrapperSelector(images, ".wrapper");
+    
 
 }
 

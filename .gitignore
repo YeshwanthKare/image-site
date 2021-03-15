@@ -1,2 +1,8 @@
 .env
 config.js
+config1.js
+// const url = `https://api.unsplash.com/photos/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q`
+
+// https://api.unsplash.com/photos/${getPostIdParam()}/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q`
+
+'https://api.unsplash.com/photos/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q'

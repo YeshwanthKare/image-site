@@ -48,7 +48,7 @@ function imageFetch() {
 }
 
 // fetchUnsplash = () => {
-//     fetch('https://api.unsplash.com/photos/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q')
+//     fetch()
 //     .then((res) => {
 //         return res.json();
 //     })

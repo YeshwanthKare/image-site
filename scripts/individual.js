@@ -1,8 +1,3 @@
-// let key = config.MY_KEY
-const url = `https://pixabay.com/api/?key=19669519-a64bb35ec2ecb1a51d76889be`
-// const baseUrl = `https://pixabay.com/api/?key=19669519-a64bb35ec2ecb1a51d76889be&previewURL`
-
-// const url = `https://api.unsplash.com/photos/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q`
 
 window.onload = () => {
     getIndividualImage();
@@ -14,10 +9,10 @@ const getPostIdParam = () => {
     return urlParams.get('id');
 }
 
-// https://api.unsplash.com/photos/${getPostIdParam()}/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q`
 
 function getIndividualImage() {
-    const myUrl = `${url}&id=${getPostIdParam()}`
+    const my_key = config.MY_KEY;
+    const myUrl = `https://pixabay.com/api/?key=${my_key}&id=${getPostIdParam()}`
     fetch(myUrl, {
         method: 'GET',
     })

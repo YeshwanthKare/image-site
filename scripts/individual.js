@@ -1,6 +1,7 @@
 
 window.onload = () => {
     getIndividualImage();
+    dropDown()
 }
 
 const getPostIdParam = () => {

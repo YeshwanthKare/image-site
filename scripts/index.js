@@ -1,6 +1,7 @@
 window.onload = () => {
     dropDown();
     imageFetch();
+    // fetchUnsplash()
 }
 
 const dropDown = () => {
@@ -29,9 +30,9 @@ const dropDownButtons = (button_selector, dropdown_selector) => {
     })
 }
 
-async function imageFetch() {
+function imageFetch() {
     let key = config.MY_KEY;
-    return await fetch(`https://pixabay.com/api/?key=${key}&image_type=all`)
+    return fetch(`https://pixabay.com/api/?key=${key}&image_type=all`)
     // &q=all&image_type=all
     .then((response) => {
         if(response.ok) {
@@ -46,8 +47,20 @@ async function imageFetch() {
     })
 }
 
+// fetchUnsplash = () => {
+//     fetch('https://api.unsplash.com/photos/?client_id=GmjV4Ak7WcDLAWr2WnftBSXFz8SMIXUoeQr7Y2HyM3Q')
+//     .then((res) => {
+//         return res.json();
+//     })
+//     .then((data) => {
+//         console.log(data);
+//         showImage(data);
+//     })
+// }
+
 const individualImageFetch = (e) => {
     let id = e.target.getAttribute("data-id");
+    window.location.href = `../pages/individual-image.html?id=${id}`
     console.log(id);
 }
 
@@ -69,8 +82,7 @@ const wrapperSelector = (images, wrapper_selector) => {
 
         img.addEventListener("click", (e) => {
             individualImageFetch(e);
-            window.location = "../pages/individual-image.html"
-   
+            
             
         })
 

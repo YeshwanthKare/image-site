@@ -1,16 +1,18 @@
 .individual-image-main {
-    background-color:teal;
+    /* background-color:teal; */
     height: 1000px;
 }
 
-.individual_image_container {
+.individual-image-main .individual_container .individual_image_container {
     background-color: #e6e6e6;
     width: 960px;
     position: relative;
-    height: fit-content;
+    height: 670px;
     display:flex;
     justify-content:center;
     align-items:center;
+    left: 20px;
+    
 }
 
 .individual_image_container:hover {
@@ -19,9 +21,15 @@
 }
 
 .individual_image_container img {
-    /* position: absolute; */
+    position: absolute;
     background-size: cover;
     background-position: center;
+    min-height: 500px;
+    max-height:700px;
+    height: auto;
+    width: auto;
+    min-width: 400px;
+    max-width: 960px;
     
 }
 
@@ -48,6 +56,7 @@
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+    /* background-color: blueviolet; */
 }
 
 .image_button {

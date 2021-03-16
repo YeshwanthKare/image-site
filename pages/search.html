@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="/style/register.css">
+    <link rel="stylesheet" href="/style/login.css">
+    <link rel="stylesheet" href="../style/search.css">
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="/scripts/index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="main-header register-header">
+            <ul class="nav-left">
+                <li class="display-left logo">
+                    <a  href="/index.html">
+                        <h1>ImageGram</h1>
+                    </a>
+                </li>
+                <li>
+                    <div class="body_search">
+                        <i class="fas fa-search body_search_register"></i>
+                        <input type="text" id="body_Search" placeholder="Search">
+                        <input type="submit" id="search_submit">
+                        <div class="body_select">
+                            <select name="option" id="body_option">
+                                <option value="images">Images</option>
+                                <option value="photos">Photos</option>
+                                <option value="vector graphics">Vector Graphics</option>
+                                <option value="">Illustrations</option>
+                            </select>
+                            <span class="register_search_arrow"><i class="fas fa-angle-down search_arrow register_arrow"></i></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav-right">
+                <li>
+                    <div class="explore"><button class="explore-btn nav-pad nav-hide"><a>Explore<i class="fas fa-angle-down explore_arrow"></i></a></button></div> 
+                    <div id="exp-drp-dwn" class="explore_dropdown">
+                        <div class="dropdown_container">
+                            <ul class="media">
+                                <b>Media</b>
+                                <li><a class="hide-nav-option" href="">Photos</a></li>
+                                <li><a class="hide-nav-option" href="">Illustrations</a></li>
+                                <li><a class="hide-nav-option" href="">Vectors</a></li>
+                                <hr class="hide-nav-option">
+                                <li>
+                                    <ul class="media-option">
+                                        <li><a href="#">Editor's Choice</a></li>
+                                        <li><a href="#">Popular Images</a></li>
+                                        <li><a href="#">Popular Searches</a></li>
+                                    </ul>
+                                </li>                                   
+                                
+                            </ul>
+                            <hr>
+                            <ul class="community">
+                                <b>Community</b>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Artists</a></li>
+                            </ul>
+                            <hr>
+                            <ul class="about">
+                                <b>About</b>
+                                <li><a class="about_us" href="#">About Us</a></li>
+                                <hr class="my-hr-line">                                    
+                                <li class="social_icons">
+                                
+                                    <a class="icon" href="https://www.facebook.com/yesh.surya.5" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                    <a class="icon" href="https://www.instagram.com/yeshwanth_nadh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a class="icon" href="https://twitter.com/yeshsuriya" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </li>
+                            
+                            
+                            </ul>
+                        </div>
+                    </div>
+                        
+                </li>
+                <li class="display-right nav-pad"><a id="login" href="/pages/login.html">Log in</a></li>
+                <div>
+                    <hr style="display: inline; width: 100%; position: relative; color: #adb5bd !important;">
+                </div>
+                <li class="display-right join nav-pad"><a href="/pages/register.html">Join</a></li>
+                <li class="display-right nav-pad"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></li>
+                <li class="menu-bar">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+</body>
+</html>

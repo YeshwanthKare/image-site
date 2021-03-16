@@ -811,6 +811,7 @@ body{
     right: 0;
     flex-wrap: wrap-reverse;
     cursor: pointer;
+    pointer-events: none;
 }
 
 

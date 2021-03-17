@@ -2,6 +2,7 @@ window.onload = () => {
     dropDown();
     imageFetch();
     // fetchUnsplash()
+    searchParameters();
 }
 
 const dropDown = () => {
@@ -69,6 +70,50 @@ const showImage = (images) => {
     
 
 }
+
+
+const fetchImagesByType = (e) => {
+    const element = e.target.getElementsByClassName('button');
+    console.log(element);
+}
+
+
+
+const searchParameters = () => {
+    let query = document.querySelector("#Search");
+    console.log(query);
+    let selectTag = document.querySelector("#option");
+    let options = selectTag.options;
+    let button = document.getElementById("search_submit");
+    button.classList.add('button')
+    // if(button.clicked = true) {
+    //     window.location.href = `../pages/search.html`
+    // }
+
+    button.addEventListener("click", (e) => {
+        e.preventDefault()
+        fetchImagesByType(e);
+        for(let option of options) {
+            console.log(option.value)
+            if(option.value == 'image'){
+                // window.location.href = `../pages/search.html?q=${query}&type=${option.value}`;
+            }else if(option.value == 'photo'){
+                // window.location.href =`../pages/search.html?q=${query}&type=${option.value}`;
+            }else if(option.value == 'vector') {
+                // window.location.href =`../pages/search.html?q=${query}&type=${option.value}`;
+            }else{
+                // window.location.href =`../pages/search.html?q=${query}&type=${option.value}`;
+            }
+        }
+    })
+
+}
+
+
+
+
+
+
 
 const wrapperSelector = (images, wrapper_selector) => {
     var imageEl = document.querySelector(wrapper_selector);

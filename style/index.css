@@ -526,9 +526,14 @@ li a {
 
 #search_submit {
     position: absolute !important;
-    top: -9999px !important;
+    /* top: -9999px !important;
     left: -9999px !important;
-    max-height: 0;
+    max-height: 0; */
+
+    top: 22px;
+    left: 660px;
+    height: 20px;
+    z-index: 0;
 }
 
 .main .search_container .default_item {

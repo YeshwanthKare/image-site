@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../style/search.css">
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
     <script src="/scripts/index.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script src="/config.js"></script>
 </head>
 <body>
     <header>
@@ -24,14 +26,17 @@
                 <li>
                     <div class="body_search">
                         <i class="fas fa-search body_search_register"></i>
-                        <input type="text" id="body_Search" placeholder="Search">
-                        <input type="submit" id="search_submit">
+                        <form>
+                            <input type="text" id="body_Search" placeholder="Search">
+                            <input type="submit" id="search_submit">
+                        </form>
+                        
                         <div class="body_select">
                             <select name="option" id="body_option">
-                                <option value="images">Images</option>
-                                <option value="photos">Photos</option>
-                                <option value="vector graphics">Vector Graphics</option>
-                                <option value="">Illustrations</option>
+                                <option id="image_option" value="image">Images</option>
+                                <option id="photo_option" value="photo">Photos</option>
+                                <option id="vector_option" value="vector">Vector Graphics</option>
+                                <option id="illustration_option" value="illustration">Illustrations</option>
                             </select>
                             <span class="register_search_arrow"><i class="fas fa-angle-down search_arrow register_arrow"></i></span>
                         </div>
@@ -96,5 +101,12 @@
             </ul>
         </div>
     </header>
+    <div class="search_images">
+        <div class="search_images_container">
+            <div class="search_wrapper">
+                    
+            </div>
+        </div>
+    </div>
 </body>
 </html>

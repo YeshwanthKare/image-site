@@ -534,6 +534,7 @@ li a {
     left: 660px;
     height: 20px;
     z-index: 0;
+    display: none
 }
 
 .main .search_container .default_item {

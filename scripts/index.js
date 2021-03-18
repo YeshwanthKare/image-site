@@ -2,7 +2,8 @@ window.onload = () => {
     dropDown();
     imageFetch();
     // fetchUnsplash()
-    searchParameters();
+    // searchParameters();
+    searchImages()
 }
 
 const dropDown = () => {
@@ -68,51 +69,34 @@ const individualImageFetch = (e) => {
 const showImage = (images) => {
     wrapperSelector(images, ".wrapper");
     
-
 }
 
+// const searchImages = () => {
+//     searchParameters("#option", "search_submit")
+// }
 
-const fetchImagesByType = (e) => {
-    const element = e.target.getElementsByClassName('button');
-    console.log(element);
-}
+// const searchParameters = (select_form, button_search) => {
+//     let selectType = document.querySelector(select_form);
+//     let button = document.getElementById(button_search);
 
-
-
-const searchParameters = () => {
-    let query = document.querySelector("#Search");
-    console.log(query);
-    let selectTag = document.querySelector("#option");
-    let options = selectTag.options;
-    let button = document.getElementById("search_submit");
-    button.classList.add('button')
-    // if(button.clicked = true) {
-    //     window.location.href = `../pages/search.html`
-    // }
-
-    button.addEventListener("click", (e) => {
-        e.preventDefault()
-        fetchImagesByType(e);
-        for(let option of options) {
-            console.log(option.value)
-            if(option.value == 'image'){
-                // window.location.href = `../pages/search.html?q=${query}&type=${option.value}`;
-            }else if(option.value == 'photo'){
-                // window.location.href =`../pages/search.html?q=${query}&type=${option.value}`;
-            }else if(option.value == 'vector') {
-                // window.location.href =`../pages/search.html?q=${query}&type=${option.value}`;
-            }else{
-                // window.location.href =`../pages/search.html?q=${query}&type=${option.value}`;
-            }
-        }
-    })
-
-}
-
-
-
-
-
+//     button.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         let query = document.querySelector("#Search").value;
+//         console.log(selectType.value);
+//         if(selectType.value == 'image'){
+//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+//         }else if(selectType.value == 'photo'){
+//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+//         }else if(selectType.value == 'vector'){
+//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+//         }else if(selectType.value == 'illustration'){
+//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+//         }else {
+//             console.log("match not found")
+//         }
+//     })
+    
+// }
 
 
 const wrapperSelector = (images, wrapper_selector) => {
@@ -173,6 +157,34 @@ const wrapperSelector = (images, wrapper_selector) => {
         imageEl.appendChild(imageElement)
 
     }
+}
+
+
+searchImages = () => {
+    searchParameters("#option", "search_submit", "#Search")
+}
+
+const searchParameters = (select_form, button_search, input_id) => {
+    let selectType = document.querySelector(select_form);
+    let button = document.getElementById(button_search);
+
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        let query = document.querySelector(input_id).value;
+        console.log(selectType.value);
+        if(selectType.value == 'image'){
+            window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+        }else if(selectType.value == 'photo'){
+            window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+        }else if(selectType.value == 'vector'){
+            window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+        }else if(selectType.value == 'illustration'){
+            window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
+        }else {
+            console.log("match not found")
+        }
+    })
+    
 }
 
 

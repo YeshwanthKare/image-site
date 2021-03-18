@@ -1,8 +1,7 @@
 window.onload = () => {
     dropDown();
     imageFetch();
-    // searchParameters();
-    // console.log(searchParameters())
+    searchImages();
 }
 
 
@@ -10,15 +9,17 @@ window.onload = () => {
 const getImageType = () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    return urlParams.get('search');
+    return urlParams.get('type');
 }
 
 
 const getImageQuery = () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    return urlParams.get('query')
+    return urlParams.get('q')
 }
+
+
 
 imageFetch = () => {
     let key = config.MY_KEY;
@@ -35,3 +36,11 @@ imageFetch = () => {
 addImage = (images) => {
     wrapperSelector(images, ".search_wrapper");
 }
+
+
+searchImages = () => {
+    searchParameters("#body_option", "search_submit", "#body_Search")
+}
+
+
+

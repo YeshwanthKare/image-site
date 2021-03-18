@@ -26,14 +26,16 @@
                     <li>
                         <div class="register_search">
                             <i class="fas fa-search feature_search_register"></i>
-                            <input type="text" id="register_Search" placeholder="Search">
-                            <input type="submit" id="search_submit">
+                            <form>
+                                <input type="text" id="register_Search" placeholder="Search">
+                                <input type="submit" id="search_submit">
+                            </form>
                             <div class="register_select">
                                 <select name="option" id="register_option">
-                                    <option value="images">Images</option>
-                                    <option value="photos">Photos</option>
-                                    <option value="vector graphics">Vector Graphics</option>
-                                    <option value="">Illustrations</option>
+                                    <option value="image">Images</option>
+                                    <option value="photo">Photos</option>
+                                    <option value="vector">Vector Graphics</option>
+                                    <option value="illustration">Illustrations</option>
                                 </select>
                                 <span class="register_search_arrow"><i class="fas fa-angle-down search_arrow register_arrow"></i></span>
                             </div>
@@ -138,5 +140,14 @@
                
             })
         </script> 
+        <script>
+            window.onload = () => {
+                searchImages();
+            }
+
+            searchImages = () => {
+                searchParameters("#register_option", "search_submit", "#register_Search")
+            }
+        </script>
     </body>
 </html>

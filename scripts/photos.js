@@ -1,6 +1,7 @@
 window.onload = () => {
     imageFetch();
     dropDown();
+    searchImages();
 }
 
 imageFetch = () => {
@@ -19,3 +20,4 @@ imageFetch = () => {
 addImage = (images) => {
     wrapperSelector(images, ".photo_wrapper")
 }
+

@@ -1,6 +1,7 @@
 window.onload = () => {
     dropDown();
     imageFetch();
+    searchImages();
 }
 
 imageFetch = () => {

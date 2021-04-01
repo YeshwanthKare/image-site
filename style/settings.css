@@ -13,6 +13,12 @@
     left: 1000px;
 }
 
+
+form {
+    position: relative;
+    left: 40px;
+}
+
 .personal-data {
     display: flex;
     justify-content: center;
@@ -45,28 +51,31 @@ body {
 .profile_image_box {
     height: 180px;
     width: 180px;
-    background-color: #4c6f4d;
+    background-color: cornflowerblue;
     position: relative;
     left: 100px;
     bottom: 10px;
-    background-image: url(https://profiles.utdallas.edu/img/default.png);
+    /* background-image: url(https://profiles.utdallas.edu/img/default.png); */
     background-size: cover;
     background-position: center;
 }
 
-.profile_image_box::after {
-    content: 'Upload picture';
-    height: 22px;
-    width: 100%;
-    background-color: #aaa;
-    position: absolute;
-    bottom: 0;
+
+label {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    cursor: pointer;
+    position: absolute;
+    background-color:#1e90ff;
     color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    /* border-radius: 0.3rem; */
+    cursor: pointer;
+    /* margin-top: 1rem; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
 }
 
 .profile_image_box:hover::after {

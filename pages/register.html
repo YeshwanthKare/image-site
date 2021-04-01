@@ -127,7 +127,7 @@
                         
                     </div>
                     <hr class="hr_middle">
-                    <form class="register_form" action="">
+                    <form class="register_form">
                         <input id="username" type="text" placeholder="Username">
                         <input id="email" type="text" placeholder="Email Address">
                         <input id="password" type="password" placeholder="Password">
@@ -149,6 +149,30 @@
             searchImages = () => {
                 searchParameters("#register_option", "search_submit", "#register_Search")
             }
+
+            const form = document.getElementById("register-form");
+            form.addEventListener("submit", userRegistration);
+
+            async function userRegistration(e) {
+                e.preventDefault()
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                await fetch("/register", {
+                    method: 'POST',
+                    headers: {
+                        'Cotent-Type' : 'application/json'
+                    },
+                    body: JSON.Stringify({
+                        username: username,
+                        email: email,
+                        password: password
+                    })
+                })
+            }
+
+            
         </script>
     </body>
 </html>

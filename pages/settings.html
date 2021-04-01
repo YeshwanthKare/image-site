@@ -125,53 +125,58 @@
                 </ul>
             </div>
             <hr>
-
-            <div class="personal-data">
-                <div class="left_column">
-                    <span id="personal">Personal Data</span>
-                    <div class="username_setting"><span>Username</span>
-                        <!-- <div class="username_heading">Username</div> -->
-                        <input id="user_heading" type="text">
-                    </div>
-                    <div class="profile_image_setting"><span id="profile">Profile Image</span>
-                        <!-- <div class="profile_image_heading">Profile Image</div> -->
-                        <div class="profile_image_box"></div>
-                    </div>
-                    <div class="place_setting">
-                        <div class="city_setting"><span id="city">City</span>
-                            <!-- <div class="city_heading">City</div> -->
-                            <input id="city_name" type="text">
+            <form id="reg-form">
+               <div class="personal-data">
+                        <div class="left_column">
+                            <span id="personal">Personal Data</span>
+                            <div class="username_setting"><span>Username</span>
+                                <!-- <div class="username_heading">Username</div> -->
+                                <input id="user_heading" type="text" name="user-heading">
+                            </div>
+                            <div class="profile_image_setting"><span id="profile">Profile Image</span>
+                                <!-- <div class="profile_image_heading">Profile Image</div> -->
+                                <div class="profile_image_box">
+                                    <img src="" alt="" />
+                                    <input type="file" id="actual-btn" hidden/>
+                                    <label for="actual-btn">Upload Image</label>
+                                </div>
+                            </div>
+                            <div class="place_setting">
+                                <div class="city_setting"><span id="city">City</span>
+                                    <!-- <div class="city_heading">City</div> -->
+                                    <input id="city_name" type="text" name="city_name">
+                                </div>
+                                <div class="country_setting"><span id="country">Country</span>
+                                    <!-- <div class="country_heading">Country</div> -->
+                                    <input id="country_name" type="text" name="country_name">
+                                </div>
+                            </div>
                         </div>
-                        <div class="country_setting"><span id="country">Country</span>
-                            <!-- <div class="country_heading">Country</div> -->
-                            <input id="country_name" type="text">
+                        <div class="right_column">
+                            <span id="option-heading">Options</span>
+                            <div class="email_setting">
+                                <div class="email-setting-header">Email Address</div>
+                                <div class="current_email">Imagegram@gram.com</div>
+                                <a href="">Imagegram@gram.com</a>
+                            </div>
+                            <div class="signin_options">
+                                <div class="signin_header">Sign in</div>
+                                <button id="facebook-button"><a href="">Facebook</a></button>
+                                <button><a href="">Google</a></button>
+                            </div>
+                            <div class="extra_setting">
+                                <div class="more_settings">More</div>
+                                <div id="set-password"><a id="set-password" href="">Change Password</a></div>
+                                <div id="del-account"><a id="del-account" href="">Deactivate account</a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="right_column">
-                    <span id="option-heading">Options</span>
-                    <div class="email_setting">
-                        <div class="email-setting-header">Email Address</div>
-                        <div class="current_email">Imagegram@gram.com</div>
-                        <a href="">Imagegram@gram.com</a>
-                    </div>
-                    <div class="signin_options">
-                        <div class="signin_header">Sign in</div>
-                        <button id="facebook-button"><a href="">Facebook</a></button>
-                        <button><a href="">Google</a></button>
-                    </div>
-                    <div class="extra_setting">
-                        <div class="more_settings">More</div>
-                        <div id="set-password"><a id="set-password" href="">Change Password</a></div>
-                        <div id="del-account"><a id="del-account" href="">Deactivate account</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="settings_save">
-            <button><a href="">Save</a></button>
-        </div>
+                <div class="settings_save">
+                    <button><a href="">Save</a></button>
+                </div>
+            </form>
 
         <script>
             $(document).ready(() => {
@@ -193,6 +198,33 @@
 
             searchImages = () => {
                 searchParameters("#register_option", "search_submit", "#register_Search")
+            }
+        </script>
+        <script>
+            let url = `http://localhost:3001`
+            let form = document.getElementById("reg-form");
+            form.addEventListener("submit", userSettings);
+
+            async function userSettings(e) {
+                e.preventDefault();
+
+                let username = document.getElementById("user_heading").value;
+                let city = document.getElementById("city_name").value;
+                let country = document.getElementById("country_name").value;
+                let payload = {
+                    username,
+                    city,
+                    country
+                }
+
+                await fetch(url, {
+                    method: "POST",
+                    headers : {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+
             }
         </script>
     </body>

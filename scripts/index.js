@@ -1,8 +1,6 @@
 window.onload = () => {
     dropDown();
     imageFetch();
-    // fetchUnsplash()
-    // searchParameters();
     searchImages()
 }
 
@@ -49,17 +47,6 @@ function imageFetch() {
     })
 }
 
-// fetchUnsplash = () => {
-//     fetch()
-//     .then((res) => {
-//         return res.json();
-//     })
-//     .then((data) => {
-//         console.log(data);
-//         showImage(data);
-//     })
-// }
-
 const individualImageFetch = (e) => {
     let id = e.target.getAttribute("data-id");
     window.location.href = `../pages/individual-image.html?id=${id}`
@@ -70,33 +57,6 @@ const showImage = (images) => {
     wrapperSelector(images, ".wrapper");
     
 }
-
-// const searchImages = () => {
-//     searchParameters("#option", "search_submit")
-// }
-
-// const searchParameters = (select_form, button_search) => {
-//     let selectType = document.querySelector(select_form);
-//     let button = document.getElementById(button_search);
-
-//     button.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         let query = document.querySelector("#Search").value;
-//         console.log(selectType.value);
-//         if(selectType.value == 'image'){
-//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
-//         }else if(selectType.value == 'photo'){
-//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
-//         }else if(selectType.value == 'vector'){
-//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
-//         }else if(selectType.value == 'illustration'){
-//             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;
-//         }else {
-//             console.log("match not found")
-//         }
-//     })
-    
-// }
 
 
 const wrapperSelector = (images, wrapper_selector) => {

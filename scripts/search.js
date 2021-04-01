@@ -28,8 +28,7 @@ imageFetch = () => {
         return response.json();
     })
     .then((data) =>{
-        addImage(data.hits);
-        console.log(data.hits)
+        addImage(data.hits)
     })
 }
 

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/style/login.css">
         <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
         <script src="/scripts/index.js"></script>
+        <script src="/scripts/session.js"></script>
     </head>
     <body>
         <header>
@@ -128,9 +129,9 @@
                         
                     </div>
                     <hr class="hr_middle">
-                    <form class="register_form" action="">
-                        <input id="username" type="text" placeholder="Username or Email">
-                        <input id="password" type="password" placeholder="Password">
+                    <form class="register_form" id="login_form">
+                        <input id="email" type="text" placeholder="Email" name="email">
+                        <input id="password" type="password" placeholder="Password" name="password">
                         <input id="register_submit" type="submit" value="Login">
                     </form>
                     <div class="register_terms">
@@ -148,6 +149,40 @@
 
             searchImages = () => {
                 searchParameters("#register_option", "search_submit", "#register_Search")
+            }
+        </script>
+        <script>
+
+            let loginForm = document.getElementById("login_form");
+            loginForm.addEventListener("submit", userLogin)
+
+
+            let url = `http://localhost:3002`
+
+            function userLogin(e){
+                e.preventDefault();
+
+                let payload = {
+                    email: loginForm.email.value,
+                    password: loginForm.password.value
+                }
+
+                fetch(`${url}/users/login`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then((res) => {
+                    return res.json();
+                })
+                .then((res) => {
+                    console.log(res)
+                    localStorage.setItem("token", res.token)
+                    location.href = "/index.html"
+                })
+                 
             }
         </script>
     </body>

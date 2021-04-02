@@ -127,10 +127,10 @@
                         
                     </div>
                     <hr class="hr_middle">
-                    <form class="register_form">
-                        <input id="username" type="text" placeholder="Username">
-                        <input id="email" type="text" placeholder="Email Address">
-                        <input id="password" type="password" placeholder="Password">
+                    <form id="register_form" class="register_form">
+                        <input id="username" type="text" placeholder="Username" name="username">
+                        <input id="email" type="text" placeholder="Email Address" name="email">
+                        <input id="password" type="password" placeholder="Password" name="password">
                         <hr class="hr_down">
                         <input id="register_submit" type="submit" value="Join">
                     </form>
@@ -149,30 +149,36 @@
             searchImages = () => {
                 searchParameters("#register_option", "search_submit", "#register_Search")
             }
+            
+        </script>
+        <script>
+            const regForm = document.getElementById("register_form");
+            regForm.addEventListener("submit", userRgistration);
 
-            const form = document.getElementById("register-form");
-            form.addEventListener("submit", userRegistration);
+            async function userRgistration(e){
+                e.preventDefault();
 
-            async function userRegistration(e) {
-                e.preventDefault()
-                const username = document.getElementById("username").value;
-                const email = document.getElementById("email").value;
-                const password = document.getElementById("password").value;
+                let URL = `http://localhost:3002`
 
-                await fetch("/register", {
-                    method: 'POST',
+                let payload = {
+                    email: regForm.email.value,
+                    username: regForm.username.value,
+                    password: regForm.password.value
+                }
+
+                await fetch(`${URL}/users/register`,{
+                    method: "POST",
                     headers: {
-                        'Cotent-Type' : 'application/json'
+                        'Content-Type' : "application/json"
                     },
-                    body: JSON.Stringify({
-                        username: username,
-                        email: email,
-                        password: password
-                    })
+                    body: JSON.stringify(payload)
+                })
+                .then((res) => {
+                    console.log(res.body)
                 })
             }
 
-            
+
         </script>
     </body>
 </html>

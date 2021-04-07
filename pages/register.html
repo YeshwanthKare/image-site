@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/style/register.css">
         <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
         <script src="/scripts/index.js"></script>
+        <script src="/scripts/session.js"></script>
     </head>
     <body>
         <header>
@@ -92,7 +93,7 @@
                         <hr style="display: inline; width: 100%; position: relative; color: #adb5bd !important;">
                     </div>
                     <li class="display-right join nav-pad"><a href="/pages/register.html">Join</a></li>
-                    <li class="display-right nav-pad"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></li>
+                    <li class="display-right nav-pad"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
                     <li class="menu-bar">
                         <a href="#">
                             <i class="fas fa-bars"></i>
@@ -144,6 +145,7 @@
         <script>
             window.onload = () => {
                 searchImages();
+                dropDown();
             }
 
             searchImages = () => {
@@ -153,9 +155,7 @@
         </script>
         <script>
             const regForm = document.getElementById("register_form");
-            regForm.addEventListener("submit", userRgistration);
-
-            async function userRgistration(e){
+            regForm.addEventListener("submit",(e) => {
                 e.preventDefault();
 
                 let URL = `http://localhost:3002`
@@ -166,17 +166,26 @@
                     password: regForm.password.value
                 }
 
-                await fetch(`${URL}/users/register`,{
+                fetch(`${URL}/users/register`,{
                     method: "POST",
                     headers: {
                         'Content-Type' : "application/json"
                     },
                     body: JSON.stringify(payload)
                 })
-                .then((res) => {
-                    console.log(res.body)
+                .then((response) => {
+                    if(response.ok){
+                        // return response.json();
+                        location.href = `/pages/login.html?existingEmail=${payload.email}&registered=true`
+                    }else{
+                        location.href = `/pages/login.html?existingEmail=${payload.email}&user=exists`
+                    }
+                    
                 })
-            }
+                .then((res) => {
+                    console.log(res);
+                })
+            })
 
 
         </script>

@@ -2,6 +2,7 @@ window.onload = () => {
     imageFetch();
     dropDown();
     searchImages();
+    removingLogin();
 }
 
 imageFetch = () => {

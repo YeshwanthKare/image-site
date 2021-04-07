@@ -117,6 +117,21 @@
 }
 
 
+.user_profile_pic {
+    margin-right: 20px;
+}
+
+.main-header .nav-right li.user_profile_dropdown {
+    height: 170px;
+    width: auto;
+    background-color: #eaecee;
+    position: absolute;
+    transform: translate3d(220px, 116px,0);
+    z-index: 4;
+    display: none;
+}
+
+
 .search_images .search_images_container .search_wrapper .image:hover .author_container {
     opacity: 1;
     background: linear-gradient(180deg,transparent, rgba(57, 57, 57, .05),rgba(57,57,57, .61), rgba(57,57,57, .61));

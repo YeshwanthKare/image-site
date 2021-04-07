@@ -2,6 +2,7 @@ window.onload = () => {
     dropDown();
     imageFetch();
     searchImages();
+    removingLogin();
 }
 
 
@@ -40,6 +41,8 @@ addImage = (images) => {
 searchImages = () => {
     searchParameters("#body_option", "search_submit", "#body_Search")
 }
+
+
 
 
 

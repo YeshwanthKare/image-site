@@ -1,7 +1,8 @@
 window.onload = () => {
     dropDown();
     imageFetch();
-    searchImages()
+    searchImages();
+    removingLogin()
 }
 
 const dropDown = () => {
@@ -145,6 +146,20 @@ const searchParameters = (select_form, button_search, input_id) => {
         }
     })
     
+}
+
+function removingLogin(){
+    const token = localStorage.getItem("token");
+    if(token){
+        document.getElementById("login").style.display = "none"
+        document.querySelector(".join").style.display = "none"
+        document.querySelector(".hr-line").style.display = "none"
+        document.querySelector(".explore_dropdown").style.right = '220px';
+        document.querySelector(".user_profile_dropdown").style.left = "-150px"
+    }else{
+        document.querySelector(".user_profile_pic").style.display = "none"
+    }
+
 }
 
 

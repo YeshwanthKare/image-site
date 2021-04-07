@@ -1,14 +1,26 @@
 function checkIfLoggedIn() {
     const currentToken = localStorage.getItem("token")
     if(currentToken){
-        if(location.href == "http://127.0.0.1:5501/pages/login.html"){
-            location.href = "http://127.0.0.1:5501/index.html";
+        if(location.href.includes("/pages/login.html") || location.href.includes("/pages/register.html")){
+            location.href = "/index.html";
         }
     }else{
-        if(location.href != "http://127.0.0.1:5501/pages/login.html"){
-            location.href = "http://127.0.0.1:5501/pages/login.html"
+        if(!location.href.includes("/pages/login.html") && !location.href.includes("/pages/register.html") && 
+        !location.href.includes("/index.html") && !location.href.includes("/pages/photos.html") &&
+        !location.href.includes("/pages/vectors.html") && !location.href.includes("/pages/illustration.html")){
+            location.href = "/pages/login.html";
         }
-    }
+    } 
+
 }
 
 checkIfLoggedIn();
+
+
+
+function logOut() {
+    location.href = "/pages/login.html";
+    localStorage.removeItem("token");
+}
+
+

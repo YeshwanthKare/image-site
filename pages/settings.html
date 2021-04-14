@@ -126,30 +126,30 @@
                 </ul>
             </div>
             <hr>
-            <form id="reg-form">
+            <form id="reg-form" enctype="multipart/form-data">
                <div class="personal-data">
                         <div class="left_column">
                             <span id="personal">Personal Data</span>
                             <div class="username_setting"><span>Username</span>
                                 <!-- <div class="username_heading">Username</div> -->
-                                <input id="user_heading" type="text" name="user-heading">
+                                <input id="user_heading" type="text" name="username">
                             </div>
                             <div class="profile_image_setting"><span id="profile">Profile Image</span>
                                 <!-- <div class="profile_image_heading">Profile Image</div> -->
                                 <div class="profile_image_box">
                                     <img src="" alt="" />
-                                    <input type="file" id="actual-btn" hidden/>
+                                    <input type="file" id="actual-btn" name="profileImage" hidden/>
                                     <label for="actual-btn">Upload Image</label>
                                 </div>
                             </div>
                             <div class="place_setting">
                                 <div class="city_setting"><span id="city">City</span>
                                     <!-- <div class="city_heading">City</div> -->
-                                    <input id="city_name" type="text" name="city_name">
+                                    <input id="city_name" type="text" name="city">
                                 </div>
                                 <div class="country_setting"><span id="country">Country</span>
                                     <!-- <div class="country_heading">Country</div> -->
-                                    <input id="country_name" type="text" name="country_name">
+                                    <input id="country_name" type="text" name="country">
                                 </div>
                             </div>
                         </div>
@@ -195,6 +195,8 @@
         <script>
             window.onload = () => {
                 searchImages();
+                dropDown();
+                // removingLogin()
             }
 
             searchImages = () => {
@@ -202,31 +204,42 @@
             }
         </script>
         <script>
-            let url = `http://localhost:3001`
+            let url = `http://localhost:3002/users/register`
             let form = document.getElementById("reg-form");
-            form.addEventListener("submit", userSettings);
 
-            async function userSettings(e) {
+            form.addEventListener("submit", (e) => {
                 e.preventDefault();
+                let profileImage = document.querySelector('input[type="file"]');
+
+                let formData = new FormData();
 
                 let username = document.getElementById("user_heading").value;
                 let city = document.getElementById("city_name").value;
                 let country = document.getElementById("country_name").value;
-                let payload = {
-                    username,
-                    city,
-                    country
-                }
+                console.log(profileImage.files)
 
-                await fetch(url, {
+                formData.append("username", username);
+                formData.append("city", city);
+                formData.append("country", country);
+                formData.append("profileImage", profileImage.files[0]);
+
+
+                fetch(`${url}`, {
                     method: "POST",
-                    headers : {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
+                    body: formData
                 })
+                .then((res) => {
+                    console.log(res)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+            })
 
-            }
+            
+            
+
+            
         </script>
     </body>
 </html>

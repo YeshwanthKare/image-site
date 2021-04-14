@@ -58,3 +58,7 @@ html, body {
 .user_profile_dropdown {
     left: -170px;
 }
+
+.explore_dropdown {
+    right: 210px;
+}

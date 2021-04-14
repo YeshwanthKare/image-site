@@ -156,6 +156,7 @@ function removingLogin(){
         document.querySelector(".hr-line").style.display = "none"
         document.querySelector(".explore_dropdown").style.right = '220px';
         document.querySelector(".user_profile_dropdown").style.left = "-150px"
+        document.querySelector(".sign-up").style.display = "none";
     }else{
         document.querySelector(".user_profile_pic").style.display = "none"
     }

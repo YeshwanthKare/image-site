@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Upload Image</title>
+        <!-- CSS only -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="/style/index.css">
         <link rel="stylesheet" href="/style/register.css">
         <link rel="stylesheet" href="/style/login.css">
@@ -95,7 +97,7 @@
                             <li><a href="/pages/upload.html">Upload</a></li>
                             <li><a href="/pages/settings.html">settings</a></li>
                             <hr>
-                            <li><a href="#">Logout</a></li>
+                            <li onclick="logOut()"><a onclick="logOut()" href="#">Logout</a></li>
                         </ul>
                     </li>
                     <li class="display-right nav-pad upload_left"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
@@ -120,10 +122,12 @@
         </div>
         <div class="upload_image">
             <form id="upload-user-image">
-                <label id="tag" for="tags">Tags:</label>
-                <textarea id="hash_keyword" type="textarea" placeholder="please allocate the hash (#) tag before the number of keywords that describes the image seperated by a space"></textarea>
-                <input id="image_upload" type="file" id="myFile" name="user-image">
-                <input id="submit" type="button" value="Submit">
+                <label for="name">Name of the Image:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label id="tag" for="tags">Enter any <b>Four</b> tags that describes the Image:</label>
+                <input type="text" id="tags" name="tags" data-role="tagsinput" />
+                <input id="image_upload" type="file" name="image">
+                <input id="submit" type="submit" value="Submit">
             </form>
             
         </div>
@@ -151,5 +155,48 @@
                 searchParameters("#register_option", "search_submit", "#register_Search")
             }
         </script>
+        <script>
+            let url = `http://localhost:3002/users/image/`
+            let form = document.getElementById("upload-user-image");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let name = document.querySelector("#name")
+                let image = document.querySelector('input[type="file"]');
+                let tags = document.querySelector("#tags");
+
+                console.log(tags.value)
+
+                let formData = new FormData()
+
+
+                let user_id = window.localStorage.getItem("token")
+                console.log(image.files)
+                formData.append("name", name.value);
+                formData.append("tags", tags.value)
+                formData.append("user_id", user_id); 
+                formData.append("image", image.files[0]);
+
+                console.log(formData)
+
+
+                fetch(`${url}`, {
+                    method: "POST",
+                    body: formData
+                })
+                .then((res) => {
+                    console.log(res)
+                })
+                .then((res) => {
+                    window.location.href = `/pages/myprofile.html`
+                    console.log(res)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+            })
+        </script>
+        
+
     </body>
 </html>

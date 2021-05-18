@@ -160,11 +160,6 @@
                                 <div class="current_email">Imagegram@gram.com</div>
                                 <a href="">Imagegram@gram.com</a>
                             </div>
-                            <div class="signin_options">
-                                <div class="signin_header">Sign in</div>
-                                <button id="facebook-button"><a href="">Facebook</a></button>
-                                <button><a href="">Google</a></button>
-                            </div>
                             <div class="extra_setting">
                                 <div class="more_settings">More</div>
                                 <div id="set-password"><a id="set-password" href="">Change Password</a></div>
@@ -175,7 +170,7 @@
                 </div>
 
                 <div class="settings_save">
-                    <button><a href="">Save</a></button>
+                    <input type="submit" value="Save">
                 </div>
             </form>
 
@@ -204,24 +199,29 @@
             }
         </script>
         <script>
-            let url = `http://localhost:3002/users/register`
+            let url = `http://localhost:3002/users/settings`
             let form = document.getElementById("reg-form");
 
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 let profileImage = document.querySelector('input[type="file"]');
 
-                let formData = new FormData();
+                let formData = new FormData()
 
+
+                let user_id = window.localStorage.getItem("token")
                 let username = document.getElementById("user_heading").value;
                 let city = document.getElementById("city_name").value;
                 let country = document.getElementById("country_name").value;
                 console.log(profileImage.files)
 
+                formData.append("user_id", user_id); 
                 formData.append("username", username);
                 formData.append("city", city);
                 formData.append("country", country);
                 formData.append("profileImage", profileImage.files[0]);
+
+                console.log(formData)
 
 
                 fetch(`${url}`, {

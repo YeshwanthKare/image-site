@@ -19,14 +19,16 @@ form#upload-user-image {
     left: 40px;
 }
 
-#hash_keyword {
+
+
+#tags {
     position: absolute;
-    top: 30px;
+    top: 60px;
     left: 0px;
-    height: 100px;
+    height: 50px;
     width: 600px;
     font-size: 18px;
-    padding: 8px 0 0 8px;
+    padding: 8px 20px 8px 20px !important;
 }
 
 html, body {

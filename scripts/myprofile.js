@@ -2,21 +2,8 @@ window.onload = () => {
     dropDown();
     userImageFetch();
     searchImages();
-    
+    userSettingsFetch();
 }
-
-
-const getPostIdParams = () => {
-    const id = Header.get("_id")
-    console.log(id)
-    const queryString = window.location.search;
-    console.log(queryString)
-    const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams)
-    return urlParams.get('id');
-    console.log(urlParams.get('_id'))
-}
-
 
 
 let API = `http://localhost:3002/users/image`
@@ -54,19 +41,67 @@ const addUserImages = (images) => {
         console.log(postImage)
         console.log(images)
         uploadedImage += `
-            <div class="image">
-                <img src="${postImage}" alt="">
-                <div>
-                    <p id="name">${img.name}</p>
-                    <p id="tag">${img.tags}</p>
-                </div>    
-            </div>                        
+            <a href = "#">
+                <div class="image">
+                    <img src="${postImage}" alt="">
+                    <div class="image-specs">
+                        <p id="name">${img.name}</p>
+                        <p id="tag">${img.tags}</p>
+                    </div>    
+                </div>
+            </a>
         `
     }
 
     imageEl.innerHTML = uploadedImage;
      
 }
+
+let Settings_API = `http://localhost:3002/users/settings`
+
+
+const userSettingsFetch = () => {
+    // let key = config.MY_KEY;
+    let url = `${Settings_API}`
+    let image = fetch(url, {
+        method: "GET",
+    });
+    image.then((response) => {
+        return response.json();
+    })
+    .then((data) =>{
+        addUserSettings(data);
+        console.log(data)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
+const addUserSettings = (settings) => {
+    let SettingEl = document.querySelector(".myprofile_container")
+    console.log(SettingEl, settings)
+    let uploadSetting = "";
+    let user_id = window.localStorage.getItem("token")
+    console.log(user_id)
+
+    for(let setting of settings){
+        if(user_id === setting.user_id){
+            let profileImage = API_BASE_URL + setting.profileImage
+        
+            uploadSetting += `
+                <div class="myprofile_name"><h1>${setting.username}</h1></div>
+                <div class="myprofile_place">${setting.city} / ${setting.country}</div>
+                <div class="myprofile_image">
+                    <img src="${profileImage}" alt=""/>
+                </div>
+            `
+        }
+    }
+
+    SettingEl.innerHTML += uploadSetting
+}
+
 
 
 searchImages = () => {

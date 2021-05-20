@@ -31,29 +31,32 @@ const userImageFetch = () => {
 // addImage = (images) => {
 //     wrapperSelector(images, ".photo_wrapper")
 // }
+let user_id = window.localStorage.getItem("token")
 
 const addUserImages = (images) => {
     var imageEl = document.querySelector(".myprofile_images_wrapper");
     var uploadedImage = "";
     for (const img of images) {
-        
-        let postImage = API_BASE_URL + img.image;
-        console.log(postImage)
-        console.log(images)
-        uploadedImage += `
-            <a href = "#">
-                <div class="image">
-                    <img src="${postImage}" alt="">
-                    <div class="image-specs">
-                        <p id="name">${img.name}</p>
-                        <p id="tag">${img.tags}</p>
-                    </div>    
-                </div>
-            </a>
-        `
+
+        if(user_id === img.user_id){
+            let postImage = API_BASE_URL + img.image;
+            console.log(postImage)
+            console.log(images)
+            uploadedImage += `
+                <a href = "#">
+                    <div class="image">
+                        <img src="${postImage}" alt="">
+                        <div class="image-specs">
+                            <p id="name">${img.name}</p>
+                            <p id="tag">${img.tags}</p>
+                        </div>    
+                    </div>
+                </a>
+            `
+        }
     }
 
-    imageEl.innerHTML = uploadedImage;
+    imageEl.innerHTML += uploadedImage;
      
 }
 
@@ -82,7 +85,6 @@ const addUserSettings = (settings) => {
     let SettingEl = document.querySelector(".myprofile_container")
     console.log(SettingEl, settings)
     let uploadSetting = "";
-    let user_id = window.localStorage.getItem("token")
     console.log(user_id)
 
     for(let setting of settings){

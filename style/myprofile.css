@@ -89,7 +89,7 @@
 
 
 .myprofile_images {
-    background-color: #ccc;
+    /* background-color: #ccc; */
 }
 
 .myprofile_images_container {
@@ -128,6 +128,10 @@
     /* position: relative; */
     height: 350px;
     width: 400px;
+}
+
+.myprofile_images_wrapper img {
+    border: 1px solid #ccc;
 }
 
 .myprofile_images_wrapper a {

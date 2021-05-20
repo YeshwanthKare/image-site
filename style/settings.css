@@ -65,27 +65,57 @@ body {
     background-position: center;
 }
 
-
-label {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    background-color:#1e90ff;
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    /* border-radius: 0.3rem; */
-    cursor: pointer;
-    /* margin-top: 1rem; */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    align-items: center;
+.cover-image {
+    /* transform: translate3d(400px, 200px, 0); */
 }
 
-.profile_image_box:hover::after {
+.cover-image label {
+    background:none;
+    color: black;
+}
+
+
+.profile-image {
+    background-color: darkblue;
+}
+
+.profile_image_box label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
+    content: "Upload Photo";
+    background-color: #1e90ff;
+    color: white;
+    cursor: pointer;
+}
+
+.profile_image_box label:hover {
     background-color: cadetblue;
     color: black;
+    cursor: pointer;
+}
+
+#profile-image {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    cursor: pointer;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+input[type = file], input[type = button], input[type = reset] {
+    cursor: pointer;
 }
 
 input#user_heading {
@@ -95,6 +125,10 @@ input#user_heading {
     transform: translateX(22px);
     font-size: 18px;
     padding-left: 8px;
+}
+
+.cover-image {
+    transform:translate3d(-120px, 40px, 0)
 }
 
 .settings_save {

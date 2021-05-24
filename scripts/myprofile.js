@@ -43,7 +43,7 @@ const addUserImages = (images) => {
             console.log(postImage)
             console.log(images)
             uploadedImage += `
-                <a href = "#">
+                <a href = "/pages/individual-image.html?id=${img._id}">
                     <div class="image">
                         <img src="${postImage}" alt="">
                         <div class="image-specs">

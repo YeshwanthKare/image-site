@@ -24,15 +24,40 @@
 .image-elem {
     position: relative;
     width: 900px;    
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4); */
     /* background-color: blue !important; */
 }
 
 .image-elem img {
    width: 100%;
-   height: auto;
-   object-fit: cover;
+   height:initial;
+   object-fit:fill;
    background-position: center;
    background-size:cover;
+   transition: all 0.35s ease-in;
+   padding: 0;
+   margin: 0;
+   box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.image-elem:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    /* z-index: 10; */
+}
+
+.image-elem img:hover{
+    /* opacity: 0.9; */
+    /* background: rgba(0, 0, 0, 0.6); */
+    /* cursor:pointer */
 }
 
 
@@ -54,6 +79,8 @@
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
     /* background-color: blueviolet; */
 }
 
@@ -65,6 +92,7 @@
 
 .image_button button {
     border-radius: 12px;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
 }
 
 .individual_like {

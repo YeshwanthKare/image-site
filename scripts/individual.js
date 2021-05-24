@@ -9,23 +9,39 @@ const getPostIdParam = () => {
     return urlParams.get('id');
 }
 
+console.log(getPostIdParam())
+
 
 function getIndividualImage() {
     const my_key = config.MY_KEY;
-    const myUrl = `https://pixabay.com/api/?key=${my_key}&id=${getPostIdParam()}`
-    fetch(myUrl, {
-        method: 'GET',
-    })
-    .then(res => {
-        return res.json();
-    }) 
-    .then((data)=>{
-        showIndividualImage(data.hits[0])
-        // console.log(data);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+    let myUrl = ``;
+
+    if(getPostIdParam().length <= 7){
+        myUrl = `https://pixabay.com/api/?key=${my_key}&id=${getPostIdParam()}`
+    }else{
+        myUrl = `http://localhost:3002/users/image/${getPostIdParam()}`
+    }
+    // const myUrl = `https://pixabay.com/api/?key=${my_key}&id=${getPostIdParam()}`
+    // const user_URL = `http://localhost:3002/users/image/${getPostIdParam()}`
+    if(myUrl){
+        fetch(myUrl, {
+            method: 'GET',
+        })
+        .then(res => {
+            return res.json();
+        }) 
+        .then((data)=>{
+            if(data.hits){
+                showIndividualImage(data.hits[0])
+            }else {
+                showUserImages(data)
+            }
+            // console.log(data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
 }
 
 const showIndividualImage = (image) => {
@@ -50,4 +66,28 @@ const showIndividualImage = (image) => {
     container.appendChild(divEl);
     console.log(container)
 
+}
+
+const showUserImages = (img) => {
+    
+    const url = `http://localhost:3002/`
+    let container = document.querySelector(".individual_image_container");
+    let imageElem = document.createElement('img');
+    let divEl = document.createElement("div");
+    divEl.setAttribute("class", "image-elem")
+    // console.log(divEl)
+    let userImage = url + img.image
+    imageElem.src = userImage;
+    // imageElem.setAttribute("id", "image-source);
+
+    // document.querySelector(".profile_image").style.backgroundImage = `url(${userImage})`;
+    // document.querySelector(".profile_name").innerText = image.user
+    // document.querySelector(".individual_like").innerHTML = `<i class="far fa-heart"></i>  <span>${image.likes}</span>`
+    // document.querySelector(".individual_favorite").innerHTML = `<i class="far fa-star"></i>  <span>${image.favorites}</span>`
+    // document.querySelector(".image_comments").innerHTML = `<button>${image.comments}  comments</button>`
+    
+
+    divEl.appendChild(imageElem)
+    container.appendChild(divEl);
+    console.log(container)
 }

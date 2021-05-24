@@ -83,6 +83,7 @@ const userSettingsFetch = () => {
 
 const addUserSettings = (settings) => {
     let SettingEl = document.querySelector(".myprofile_container")
+    // SettingEl.style.backgroundImage = settings.coverImage
     console.log(SettingEl, settings)
     let uploadSetting = "";
     console.log(user_id)
@@ -90,8 +91,10 @@ const addUserSettings = (settings) => {
     for(let setting of settings){
         if(user_id === setting.user_id){
             let profileImage = API_BASE_URL + setting.profileImage
+            let coverImage = API_BASE_URL + setting.coverImage;
+            SettingEl.style.backgroundImage = `url(${coverImage})`
         
-            uploadSetting += `
+            uploadSetting = `
                 <div class="myprofile_name"><h1>${setting.username}</h1></div>
                 <div class="myprofile_place">${setting.city} / ${setting.country}</div>
                 <div class="myprofile_image">
@@ -101,7 +104,7 @@ const addUserSettings = (settings) => {
         }
     }
 
-    SettingEl.innerHTML += uploadSetting
+    SettingEl.innerHTML = uploadSetting
 }
 
 

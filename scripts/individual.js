@@ -33,15 +33,21 @@ const showIndividualImage = (image) => {
     console.log(image.user)
     let container = document.querySelector(".individual_image_container");
     let imageElem = document.createElement('img');
+    let divEl = document.createElement("div");
+    divEl.setAttribute("class", "image-elem")
+    // console.log(divEl)
     imageElem.src = image.largeImageURL;
-    imageElem.setAttribute("id", "image-source");
+    // imageElem.setAttribute("id", "image-source);
 
     document.querySelector(".profile_image").style.backgroundImage = `url(${image.userImageURL})`;
     document.querySelector(".profile_name").innerText = image.user
     document.querySelector(".individual_like").innerHTML = `<i class="far fa-heart"></i>  <span>${image.likes}</span>`
     document.querySelector(".individual_favorite").innerHTML = `<i class="far fa-star"></i>  <span>${image.favorites}</span>`
     document.querySelector(".image_comments").innerHTML = `<button>${image.comments}  comments</button>`
- 
-    container.appendChild(imageElem);
+    
+
+    divEl.appendChild(imageElem)
+    container.appendChild(divEl);
+    console.log(container)
 
 }

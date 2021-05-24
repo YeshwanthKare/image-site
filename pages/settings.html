@@ -178,8 +178,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="settings_save">
                     <input type="submit" value="Save">
                 </div>
@@ -243,6 +241,7 @@
                 })
                 .then((res) => {
                     console.log(res)
+                    window.location.href = `/pages/myprofile.html`
                 })
                 .catch((err) => {
                     console.log(err)

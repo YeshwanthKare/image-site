@@ -38,10 +38,15 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    background-image: url(https://wallpaperaccess.com/full/754632.jpg);
+    /* background-image: url(https://wallpaperaccess.com/full/754632.jpg); */
     background-size: cover;
     background-position: center;
 }
+
+/* .myprofile_container img {
+    background-size: cover;
+    background-position: center;
+} */
 
 .myprofile_container::after {
     position: absolute;
@@ -160,13 +165,15 @@
 .myprofile_images_wrapper a:hover .image-specs {
     opacity: 1;
     background: linear-gradient(180deg,transparent, rgba(57, 57, 57, .05),rgba(57,57,57, .61), rgba(57,57,57, .61));
-    bottom: 0px;
+    bottom: 0;
     height: 30px;
     overflow:visible;
     flex-wrap: wrap-reverse;
     cursor: pointer;
     pointer-events: none;
     left: 0px;
+    right: 0;
+    /* top: 80.05%; */
 } 
 
 .image-specs p {

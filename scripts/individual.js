@@ -1,6 +1,8 @@
 window.onload = () => {
     getIndividualImage();
     dropDown()
+    removingLogin();
+    userSettingFetch()
 }
 
 const getPostIdParam = () => {

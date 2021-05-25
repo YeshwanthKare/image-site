@@ -160,8 +160,9 @@ body {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: #4b0082;
-    background-image: url(https://i.pinimg.com/originals/fb/25/ac/fb25ac2832194c7494ef28bd5e33d9eb.jpg);
+    box-shadow: 0 0 2px 1px rgba(57,57,57, .61);
+    /* background-color: #4b0082; */
+    /* background-image: url(https://i.pinimg.com/originals/fb/25/ac/fb25ac2832194c7494ef28bd5e33d9eb.jpg); */
     background-size: cover;
     background-position: center;
     cursor: pointer;

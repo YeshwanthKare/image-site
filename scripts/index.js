@@ -2,7 +2,8 @@ window.onload = () => {
     dropDown();
     imageFetch();
     searchImages();
-    removingLogin()
+    removingLogin();
+    userSettingFetch()
 }
 
 const dropDown = () => {
@@ -162,6 +163,40 @@ function removingLogin(){
     }
 
 }
+
+// let user
+
+
+function userSettingFetch() {
+    // let key = config.MY_KEY;
+    return fetch(`http://localhost:3002/users/settings`)
+    // &q=all&image_type=all
+    .then((response) => {
+        if(response.ok) {
+            return response.json();
+        }else {
+            throw new Error("Something went wrong");
+        }
+    })
+    .then((data) =>{
+        userProfileImage(data);
+        // console.log(data.hits)
+    })
+}
+
+
+let token  = window.localStorage.getItem("token")
+
+// console.log(token)
+
+const userProfileImage = (data) => {
+    for (const img of data) {
+        let userProfileImage = `http://localhost:3002/${img.profileImage}`         
+        if(token === img.user_id){
+            document.querySelector(".user_profile_pic").style.backgroundImage = `url(${userProfileImage})`
+        }        
+    }
+} 
 
 
 

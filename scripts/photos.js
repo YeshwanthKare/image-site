@@ -3,6 +3,7 @@ window.onload = () => {
     dropDown();
     searchImages();
     removingLogin();
+    userSettingFetch();
 }
 
 imageFetch = () => {

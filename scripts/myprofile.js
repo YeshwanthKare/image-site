@@ -3,6 +3,7 @@ window.onload = () => {
     userImageFetch();
     searchImages();
     userSettingsFetch();
+    userSettingFetch()
 }
 
 
@@ -106,6 +107,9 @@ const addUserSettings = (settings) => {
 
     SettingEl.innerHTML = uploadSetting
 }
+
+
+
 
 
 

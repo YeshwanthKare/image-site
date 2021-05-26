@@ -169,7 +169,7 @@ function removingLogin(){
 
 function userSettingFetch() {
     // let key = config.MY_KEY;
-    return fetch(`http://localhost:3002/users/settings`)
+    return fetch(`http://localhost:3002/users/settings/`)
     // &q=all&image_type=all
     .then((response) => {
         if(response.ok) {
@@ -189,11 +189,17 @@ let token  = window.localStorage.getItem("token")
 
 // console.log(token)
 
+
+
 const userProfileImage = (data) => {
+    console.log(data)
     for (const img of data) {
+        let userName = img.username;
+        console.log(userName)
         let userProfileImage = `http://localhost:3002/${img.profileImage}`         
         if(token === img.user_id){
             document.querySelector(".user_profile_pic").style.backgroundImage = `url(${userProfileImage})`
+            document.querySelector(".profile_image").style.backgroundImage = `url(${userProfileImage})`
         }        
     }
 } 

@@ -32,7 +32,7 @@
 .myprofile_container {
     height: 320px;
     width: 100%;
-    background-color:burlywood;
+    /* background-color:burlywood; */
     display: flex;
     justify-content: center;
     align-items: center;

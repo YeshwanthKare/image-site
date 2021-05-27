@@ -199,7 +199,6 @@ const userProfileImage = (data) => {
         let userProfileImage = `http://localhost:3002/${img.profileImage}`         
         if(token === img.user_id){
             document.querySelector(".user_profile_pic").style.backgroundImage = `url(${userProfileImage})`
-            document.querySelector(".profile_image").style.backgroundImage = `url(${userProfileImage})`
         }        
     }
 } 

@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../scripts/index.js"></script>
+    <!-- <script src=""></script> -->
     <script src="../scripts/individual.js"></script>
     <script src="../config1.js"></script>
     <script src="../scripts/session.js"></script>
@@ -28,14 +29,16 @@
                 <li>
                     <div class="register_search">
                         <i class="fas fa-search feature_search_register"></i>
-                        <input type="text" id="register_Search" placeholder="Search">
-                        <input type="submit" id="search_submit">
+                        <form>
+                            <input type="text" id="register_Search" placeholder="Search">
+                            <input type="submit" id="search_submit">
+                        </form>
                         <div class="register_select">
                             <select name="option" id="register_option">
-                                <option value="images">Images</option>
-                                <option value="photos">Photos</option>
-                                <option value="vector graphics">Vector Graphics</option>
-                                <option value="">Illustrations</option>
+                                <option value="image">Images</option>
+                                <option value="photo">Photos</option>
+                                <option value="vector">Vector Graphics</option>
+                                <option value="illustration">Illustrations</option>
                             </select>
                             <span class="register_search_arrow"><i class="fas fa-angle-down search_arrow register_arrow"></i></span>
                         </div>
@@ -114,6 +117,7 @@
 
     <!-- Image and comments DIV -->
 
+
     <div class="individual-image-main">
         <div class="individual_container">
             <div class="individual_image_container">  
@@ -139,13 +143,32 @@
                 <div  id="profile-image" class="profile_image user_profile_pic"></div>
                 <div class="profile_name" style="margin-left: 10px;"></div>
             </div>
-            <hr class="individual_up">
+    
             <div class="image_button">
                 <button class="individual_like"></button>
                 <button class="individual_favorite"></button>
                 <button class="individual_share"><i class="fas fa-share-alt"></i></button>
             </div>
-            <hr class="individual_down">    
+             
+            <div class="manage-images">
+                <div class="download-image">
+                    <button class="img-dwnld"><i class="fas fa-download"></i> Download Image</button>
+                </div>
+            </div>
+            <div class="picture-size">
+                <ul>
+                    <li>150px</li>
+                    <hr>
+                    <li>640px</li>
+                    <hr>
+                    <li>1280px</li>
+                    <hr>
+                    <li>1920px</li>
+                </ul>
+            </div> 
+        </div>
+        <div class="sign-up">
+
         </div>
 
         

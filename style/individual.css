@@ -1,8 +1,8 @@
 
-.individual_image_main {
+.individual-image-main {
     width: 100%;
     display: flex;
-    top: 30px;
+    /* top: 30px; */
     position: relative;
 }
 
@@ -49,22 +49,19 @@
     bottom: 0;
     left: 0;
     right: 0;
+    /* height: 50px; */
     background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
     /* z-index: 10; */
 }
 
-.image-elem img:hover{
-    /* opacity: 0.9; */
-    /* background: rgba(0, 0, 0, 0.6); */
-    /* cursor:pointer */
-}
+
 
 
 .individual_profile {
-    position: absolute;
-    top: 95px;
-    right: 62px;
+    position: relative;
+    top: 30px;
+    left: 50px;
 }
 
 .author_profile {
@@ -84,19 +81,33 @@
     /* background-color: blueviolet; */
 }
 
+.profile_name {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
 .image_button {
-    transform: translate3d(0px, 45px,0);
-    /* padding-right: 20px; */
-    position: sticky;
+    display: flex;
+    position: relative;
+    top: 30px;
+    right: 10px;
+    background-color: #eaeded;
+    width: 320px;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
 }
 
 .image_button button {
+    /* position: absolute; */
     border-radius: 12px;
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
 }
 
 .individual_like {
-    transform: translate3d(10px, 0, 0);
+    /* transform: translate3d(10px, 0, 0); */
     border: transparent;
     padding: 6px 24px;
     background-color: #008ddf;
@@ -109,7 +120,7 @@
 }
 
 .individual_share {
-    transform: translate3d(48px,0,0);
+    /* transform: translate3d(48px,0,0); */
     border: transparent;
     padding: 6px 36px;
     background: #e6e6e6;
@@ -121,7 +132,7 @@
 }
 
 .individual_favorite {
-    transform: translate3d(30px, 0 ,0);
+    /* transform: translate3d(30px, 0 ,0); */
     border: transparent;
     padding: 6px 24px;
     background-color:#008ddf;
@@ -133,14 +144,8 @@
     cursor: pointer;
 }
 
-.individual_up {
-    transform: translate3d(0, 20px, 0);
-}
 
-.individual_down {
-    transform: translate3d(0, 74px, 0);
-    width: 300px;
-}
+
 
 .individual_last {
     display: flex;
@@ -207,4 +212,40 @@
 
     
 }
+
+.download-image {
+    position: relative;
+    top: 80px;
+    left: -10px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.download-image button {
+    padding: 10px 16px 10px 16px;
+    border-radius: 6px;
+    background: #008ddf;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.picture-size {
+    background-color: #eaeded;
+    width: 30%;
+    text-align: center;
+    position: relative;
+    top: 78px;
+    left: 80px;
+}
+
+.picture-size ul li {
+    padding: 8px 3px 8px 3px;
+    cursor: pointer;
+}
+
+
+
 

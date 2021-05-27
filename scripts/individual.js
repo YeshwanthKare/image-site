@@ -1,9 +1,11 @@
 window.onload = () => {
+    searchImages()
     getIndividualImage();
     dropDown()
     settingsFetch()
     removingLogin();
     userSettingFetch();
+    
     // console.log(userSettingFetch())
     // settingsFetch();
 }
@@ -16,7 +18,7 @@ const getPostIdParam = () => {
 
 console.log(getPostIdParam())
 
-console.log(userSettingFetch())
+// console.log(userSettingFetch())
 
 
 function getIndividualImage() {
@@ -58,7 +60,8 @@ const showIndividualImage = (image) => {
     let divEl = document.createElement("div");
     divEl.setAttribute("class", "image-elem")
     // console.log(divEl)
-    imageElem.src = image.largeImageURL;
+    // imageElem.src = image.largeImageURL;
+    imageElem.src = image.fullHDURL;
     // imageElem.setAttribute("id", "image-source);
 
     document.querySelector(".profile_image").style.backgroundImage = `url(${image.userImageURL})`;
@@ -93,7 +96,7 @@ const showUserImages = (img) => {
         console.log(pics)
         for (const pic of pics) {
             if(token === pic.user_id){
-                // document.getElementById("profile-image").style.backgroundImage = `url(${url}${pic.profileImage})` 
+                document.getElementById("profile-image").style.backgroundImage = `url(${url}${pic.profileImage})` 
                 document.querySelector(".profile_name").innerText = pic.username
 
             }
@@ -127,4 +130,8 @@ const showUserImages = (img) => {
     divEl.appendChild(imageElem)
     container.appendChild(divEl);
     // console.log(container)
+}
+
+searchImages = () => {
+    searchParameters("#register_option", "search_submit", "#register_Search")
 }

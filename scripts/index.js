@@ -133,6 +133,7 @@ const searchParameters = (select_form, button_search, input_id) => {
     button.addEventListener("click", (e) => {
         e.preventDefault();
         let query = document.querySelector(input_id).value;
+        console.log(query);
         console.log(selectType.value);
         if(selectType.value == 'image'){
             window.location.href = `../pages/search.html?q=${query}&type=${selectType.value}`;

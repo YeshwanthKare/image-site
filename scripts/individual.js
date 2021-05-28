@@ -75,6 +75,42 @@ const showIndividualImage = (image) => {
     container.appendChild(divEl);
     console.log(container)
 
+    // downloadable images
+
+    let downloadContainer = document.querySelector(".picture-size");
+    console.log(downloadContainer)
+
+    let ulList = `
+            <ul>
+                <li class="small-image">
+                    <a href="${image.previewURL}" download="${image.tags[0]}" target="_blank">
+                        150px 
+                    </a>
+                </li>
+                <hr>
+                <li class="medium-image">
+                    <a href="${image.imageURL}" download="${image.tags[0]}" target="_blank">
+                        640px
+                    </a>
+                </li>
+                <hr>
+                <li class="large-image">
+                    <a href="${image.largeImageURL}" download="${image.tags[0]}" target="_blank">
+                        1280px
+                    </a>
+                </li>
+                <hr>
+                <li class="hd-image">
+                    <a href="${image.fullHDURL}" download="${image.tags[0]}" target="_blank">
+                        1920px
+                    </a>
+                </li>
+            </ul>`
+
+            console.log(ulList)
+
+    downloadContainer.innerHTML = ulList
+
 }
 
 const settingsFetch =  () => {
@@ -130,6 +166,22 @@ const showUserImages = (img) => {
     divEl.appendChild(imageElem)
     container.appendChild(divEl);
     // console.log(container)
+
+    let downloadContainer = document.querySelector(".picture-size");
+    console.log(downloadContainer)
+
+    let ulList = `
+            <ul>
+                <li class="small-image">
+                    <a href="${userImage}" download="${img.tags}" target="_blank">
+                        150px 
+                    </a>
+                </li>
+            </ul>`
+
+            console.log(ulList)
+
+    downloadContainer.innerHTML = ulList
 }
 
 searchImages = () => {

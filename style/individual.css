@@ -145,6 +145,18 @@
 }
 
 
+.individual_delete {
+    position: relative;
+    top: 65px;
+    border: transparent;
+    background-color:#008ddf;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px 16px 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 
 
 .individual_last {
@@ -215,8 +227,8 @@
 
 .download-image {
     position: relative;
-    top: 80px;
-    left: -10px;
+    top: 26px;
+    left: 90px;
     padding: 3px;
     display: flex;
     justify-content: center;
@@ -228,7 +240,7 @@
     background: #008ddf;
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -237,8 +249,19 @@
     width: 30%;
     text-align: center;
     position: relative;
-    top: 78px;
-    left: 80px;
+    top: 23px;
+    left: 195px;
+    display: none;
+    
+}
+
+.picture-size a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.picture-size a:hover {
+    color: rgba(73, 62, 62, 0.4);
 }
 
 .picture-size ul li {

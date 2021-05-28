@@ -23,3 +23,7 @@ addImage = (images) => {
     wrapperSelector(images, ".photo_wrapper")
 }
 
+searchImages = () => {
+    searchParameters("#option", "search_submit", "#Search")
+}
+

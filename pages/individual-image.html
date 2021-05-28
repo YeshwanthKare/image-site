@@ -149,22 +149,15 @@
                 <button class="individual_favorite"></button>
                 <button class="individual_share"><i class="fas fa-share-alt"></i></button>
             </div>
+            <button class="individual_delete"><i class="fas fa-trash"></i> Delete Image</button>
              
             <div class="manage-images">
                 <div class="download-image">
-                    <button class="img-dwnld"><i class="fas fa-download"></i> Download Image</button>
+                    <button class="img-dwnld"><i class="far fa-eye"></i> Preview Image</button>
                 </div>
             </div>
-            <div class="picture-size">
-                <ul>
-                    <li>150px</li>
-                    <hr>
-                    <li>640px</li>
-                    <hr>
-                    <li>1280px</li>
-                    <hr>
-                    <li>1920px</li>
-                </ul>
+            <div class="picture-size">                
+
             </div> 
         </div>
         <div class="sign-up">
@@ -187,10 +180,23 @@
         })
 
     </script>
-    <!-- <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/scripts/index.js"></script>
-    <script src="/scripts/individual.js"></script>
-    <script src="../config.js"></script> -->
+
+    <script>
+        $(document).ready(() => {
+            $('.img-dwnld').click((e) => {
+                e.stopPropagation();
+                $('.picture-size').fadeToggle('fast');
+            })
+
+            $(document).click(() => {
+                $('.picture-size').hide();
+            })
+            
+        })
+
+    </script>
+
+    <script src="/scripts/FileSaver.min.js"></script>
+    
 </body>
 </html>

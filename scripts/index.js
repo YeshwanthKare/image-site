@@ -11,6 +11,7 @@ const dropDown = () => {
     dropDownButtons (".explore-btn", ".explore_dropdown")
     dropDownButtons (".menu-bar", ".explore_dropdown")
     
+    
 }
 
 const dropDownButtons = (button_selector, dropdown_selector) => {

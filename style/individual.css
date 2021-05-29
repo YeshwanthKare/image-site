@@ -148,7 +148,7 @@
     position: relative;
     top: 20px;
     right: 10px;
-    background-color: #eaeded;
+    background-color: #fff;
     width: 320px;
     display: flex;
     padding: 16px;
@@ -408,6 +408,65 @@
     cursor: pointer;
 }
 
+/* Social share Icons */
+
+body {
+    background: #eaeded;
+}
+
+.social-share {
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    left: 212px;
+    top: -36px;
+    padding: 10px;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-width: 80px;
+    max-width: 110px;
+    width: 100%; 
+    display: none;
+}
+
+
+
+.social-share a {
+    text-align: center;
+    transition: all 500ms ease-in-out;    
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.social-share i {
+    font-size: 28px;
+    margin: 10px;
+}
+
+.social-share i:hover {
+    transform: scale(1.1);
+}
+
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+
+.fa-pinterest {
+    color: #e60023;
+}
+
+.fa-linkedin {
+    color: #0077b5;
+}
+
+.fa-whatsapp-square {
+    color: #25d366;
+}
 
 
 

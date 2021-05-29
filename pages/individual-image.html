@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
+    <meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" />
     <title>Image</title>
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/register.css">
@@ -181,9 +183,33 @@
                 </div>
             </div>
 
+            <!-- Picture Pixel Dropdown -->
+
             <div class="picture-size">                
 
             </div> 
+
+            <!-- Share Social Dropdown -->
+            
+            <div class="social-share">
+                <!-- <a href="#" class="facebook-btn">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="twitter-btn">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="pinterest-btn">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="#" class="linkedin-btn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp-square"></i>
+                </a> -->
+            </div>
+            
+
         </div>
         <div class="sign-up">
 
@@ -215,6 +241,21 @@
 
             $(document).click(() => {
                 $('.picture-size').hide();
+            })
+            
+        })
+
+    </script>
+
+    <script>
+        $(document).ready(() => {
+            $('.individual_share').click((e) => {
+                e.stopPropagation();
+                $('.social-share').fadeToggle('fast');
+            })
+
+            $(document).click(() => {
+                $('.social-share').hide();
             })
             
         })

@@ -6,7 +6,6 @@ window.onload = () => {
     removingLogin();
     userSettingFetch();
     removeImage()
-    
 }
 
 const getPostIdParam = () => {
@@ -92,7 +91,7 @@ const showIndividualImage = (image) => {
 
     divEl.appendChild(imageElem)
     container.appendChild(divEl);
-    console.log(container)
+    // console.log(container)
 
     // downloadable images
 
@@ -187,6 +186,52 @@ const showUserImages = (img) => {
     divEl.appendChild(imageElem)
     container.appendChild(divEl);
     // console.log(container)
+
+    
+
+
+    let postUrl = encodeURI(document.location.href)
+    let encodeImage = encodeURI(userImage)
+
+    let shareContainer = document.querySelector(".social-share")
+
+    console.log(shareContainer)
+
+    let facebookButton = document.createElement("a");
+    facebookButton.setAttribute("href", ``)
+    facebookButton.innerHTML = `<i class="fab fa-facebook"></i>`
+
+    // console.log(facebookButton)
+    let twitterButton = document.createElement("a");
+    twitterButton.setAttribute("href", `https://twitter.com/share?media=${encodeImage}`)
+    twitterButton.innerHTML =  `<i class="fab fa-twitter"></i>`  
+
+    let pinterestButton = document.createElement("a")
+    pinterestButton.setAttribute("href", `https://pinterest.com/pin/create/bookmarklet/?media=${encodeImage}`)
+    pinterestButton.innerHTML =  `<i class="fab fa-pinterest"></i>`      
+
+    let linkedinButton = document.createElement("a");
+    linkedinButton.setAttribute("href", `https://www.linkedin.com/shareArticle?text=${encodeImage}`)
+    linkedinButton.innerHTML =  `<i class="fab fa-linkedin"></i>`      
+
+
+    let whatsappButton = document.createElement("a");
+    whatsappButton.setAttribute("href", `https://api.whatsapp.com/send?text=${encodeImage}`)
+    whatsappButton.innerHTML =  `<i class="fab fa-whatsapp-square"></i>`      
+
+
+    console.log(facebookButton)
+
+    shareContainer.appendChild(facebookButton)
+    shareContainer.appendChild(twitterButton)
+    shareContainer.appendChild(pinterestButton)
+    shareContainer.appendChild(linkedinButton)
+    shareContainer.appendChild(whatsappButton)    
+
+
+
+    
+    /* Settings Fetch for Profile pic */
 
 
     let settings = settingsFetch();
@@ -299,6 +344,41 @@ const removeImage = () => {
 
     
 }
+
+
+
+
+/*
+
+social share links whatsapp
+https://api.whatsapp.com/send?text=[post-title] [post-url]
+
+
+social share links facebook
+https://www.facebook.com/sharer.php?u=[post-url]
+
+
+social share links twitter
+https://twitter.com/share?url=[post-url]&text=[post-title]&via=[via]&hashtags=[hashtags]
+
+
+social share links pinterest
+https://pinterest.com/pin/create/bookmarklet/?media=[post-img]&url=[post-url]&is_video=[is_video]&description=[post-title]
+
+
+social share links linkedin
+https://www.linkedin.com/shareArticle?url=[post-url]&title=[post-title]
+
+
+*/
+
+// const ImageShare = (image, postUrl) => {
+    
+
+    
+// }
+
+
 
 
 

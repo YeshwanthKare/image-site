@@ -38,6 +38,12 @@ const addUserImages = (images) => {
     var imageEl = document.querySelector(".myprofile_images_wrapper");
     var uploadedImage = "";
     for (const img of images) {
+        if (img) {
+            document.querySelector(".upload-myimage").style.display = 'none'
+        }else{
+            document.querySelector(".upload-myimage").style.display = 'block'
+
+        }
 
         if(user_id === img.user_id){
             let postImage = API_BASE_URL + img.image;

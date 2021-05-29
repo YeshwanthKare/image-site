@@ -142,6 +142,7 @@
             <div class="author_profile">
                 <div  id="profile-image" class="profile_image user_profile_pic"></div>
                 <div class="profile_name" style="margin-left: 10px;"></div>
+                <div class="profile-navigate"><a href="/pages/myprofile.html">My Profile</a></div>
             </div>
     
             <div class="image_button">
@@ -149,13 +150,37 @@
                 <button class="individual_favorite"></button>
                 <button class="individual_share"><i class="fas fa-share-alt"></i></button>
             </div>
-            <button class="individual_delete"><i class="fas fa-trash"></i> Delete Image</button>
              
+
+            
             <div class="manage-images">
                 <div class="download-image">
+                    <button class="individual_delete"><i class="fas fa-trash"></i> Delete Image</button>
                     <button class="img-dwnld"><i class="far fa-eye"></i> Preview Image</button>
                 </div>
             </div>
+            
+
+            <div class="modal-form">
+                
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="modal-info">
+                            <p>Are you sure you want to delete the Image ?</p>
+                            <div class="modal-button">
+                                <a href="/pages/myprofile.html"><button class="yes">Yes</button></a>
+                                <button class="no"><a href="#">No</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <div class="picture-size">                
 
             </div> 
@@ -196,7 +221,6 @@
 
     </script>
 
-    <script src="/scripts/FileSaver.min.js"></script>
     
 </body>
 </html>

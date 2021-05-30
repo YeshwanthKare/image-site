@@ -217,21 +217,21 @@
 
 .register_form input:nth-child(3) {
     position: absolute;
-    bottom: 68px;
+    bottom: 98px;
     left: 4px;
     width: 280px;
 }
 
 .register_form input:nth-child(2){
    position: absolute;
-    bottom: 122px;
+    bottom: 162px;
     left: 4px;
     width: 280px;
 }
 
 .register_form input:nth-child(1) {
     position: absolute;
-    bottom: 176px;
+    bottom: 226px;
     left: 4px;
     width: 280px;
 } 

@@ -119,15 +119,19 @@
                             </a>
                         </div>
                         <hr class="hr_up">
-                        <div class="register_icons">
-                            <a href="">
-                                <button class="register_google"><i class="fab fa-google"></i> Google</button>
-                            </a>
-                            <a href="">
-                                <button class="register_facebook"><i class="fab fa-facebook-square"></i> Facebook</button>
-                            </a>
-                            
-                        </div>
+
+                        <form>
+                            <div class="register_icons">
+                                <a href="">
+                                    <button class="register_google"><i class="fab fa-google"></i> Google</button>
+                                </a>
+                                <a href="">
+                                    <button type="submit" onclick="logIn()" class="register_facebook"><i class="fab fa-facebook-square"></i> Facebook</button>
+                                </a>
+                                
+                            </div>
+                        </form>
+                        
                         
                     </div>
                     <hr class="hr_middle">
@@ -144,6 +148,14 @@
             </div>
             
         </div>
+
+        <script>
+            const logIn = () => {
+                FB.login((res) =>{
+                    console.log(res)
+                })
+            }
+        </script>
 
         <script>
             window.onload = () => {
@@ -202,10 +214,26 @@
                 .then((res) => {
                     console.log(res)
                     localStorage.setItem("token", res.token)
-                    location.href = `/index.html?email=${payload.email}`
+
+                    if(res.status === 'valid'){
+                       location.href = `/index.html`
+                    }else{
+                        alert("Email or Password Not Valid.")
+                    }
                 })
                  
             }
         </script>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId            : '862804140972732',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v10.0'
+                });
+            };
+        </script>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     </body>
 </html>

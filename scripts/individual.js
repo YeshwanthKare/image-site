@@ -5,7 +5,9 @@ window.onload = () => {
     settingsFetch()
     removingLogin();
     userSettingFetch();
-    removeImage()
+    removeImage();
+    iconShare()
+    
 }
 
 const getPostIdParam = () => {
@@ -53,7 +55,7 @@ function getIndividualImage() {
 // API Images Fetch
 
 const showIndividualImage = (image) => {
-    console.log(image)
+    // console.log(image)
     // console.log(image.user)
     let container = document.querySelector(".individual_image_container");
     let imageElem = document.createElement('img');
@@ -71,7 +73,7 @@ const showIndividualImage = (image) => {
     userTags.setAttribute("class", "user-tags");
     userTags.innerText = image.tags
 
-    console.log(userTags)
+    // console.log(userTags)
 
     
   
@@ -100,7 +102,7 @@ const showIndividualImage = (image) => {
     document.querySelector(".download-image").style.justifyContent = 'flex-end'
 
     let downloadContainer = document.querySelector(".picture-size");
-    console.log(downloadContainer)
+    // console.log(downloadContainer)
 
     let ulList = `
             <ul>
@@ -188,49 +190,6 @@ const showUserImages = (img) => {
     // console.log(container)
 
     
-
-
-    let postUrl = encodeURI(document.location.href)
-    let encodeImage = encodeURI(userImage)
-
-    let shareContainer = document.querySelector(".social-share")
-
-    console.log(shareContainer)
-
-    let facebookButton = document.createElement("a");
-    facebookButton.setAttribute("href", ``)
-    facebookButton.innerHTML = `<i class="fab fa-facebook"></i>`
-
-    // console.log(facebookButton)
-    let twitterButton = document.createElement("a");
-    twitterButton.setAttribute("href", `https://twitter.com/share?media=${encodeImage}`)
-    twitterButton.innerHTML =  `<i class="fab fa-twitter"></i>`  
-
-    let pinterestButton = document.createElement("a")
-    pinterestButton.setAttribute("href", `https://pinterest.com/pin/create/bookmarklet/?media=${encodeImage}`)
-    pinterestButton.innerHTML =  `<i class="fab fa-pinterest"></i>`      
-
-    let linkedinButton = document.createElement("a");
-    linkedinButton.setAttribute("href", `https://www.linkedin.com/shareArticle?text=${encodeImage}`)
-    linkedinButton.innerHTML =  `<i class="fab fa-linkedin"></i>`      
-
-
-    let whatsappButton = document.createElement("a");
-    whatsappButton.setAttribute("href", `https://api.whatsapp.com/send?text=${encodeImage}`)
-    whatsappButton.innerHTML =  `<i class="fab fa-whatsapp-square"></i>`      
-
-
-    console.log(facebookButton)
-
-    shareContainer.appendChild(facebookButton)
-    shareContainer.appendChild(twitterButton)
-    shareContainer.appendChild(pinterestButton)
-    shareContainer.appendChild(linkedinButton)
-    shareContainer.appendChild(whatsappButton)    
-
-
-
-    
     /* Settings Fetch for Profile pic */
 
 
@@ -273,9 +232,63 @@ const showUserImages = (img) => {
 }
 
 
+const iconShare = () => {
+    let postUrl = encodeURI(document.location.href)
+    let userImage = `https://images.unsplash.com/photo-1564648351416-3eec9f3e85de?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a29zdGVubG9zZSUyMGJpbGRlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80`
+    let encodeImage = encodeURI(userImage)
+
+    let shareContainer = document.querySelector(".social-share")
+
+    console.log(shareContainer)
+
+    let facebookButton = document.createElement("a");
+    facebookButton.setAttribute("href", ``)
+    facebookButton.innerHTML = `<i class="fab fa-facebook"></i>`
+
+    // console.log(facebookButton)
+    let twitterButton = document.createElement("a");
+    twitterButton.setAttribute("href", `https://twitter.com/share?media=${encodeImage}`)
+    twitterButton.innerHTML =  `<i class="fab fa-twitter"></i>`  
+
+    let pinterestButton = document.createElement("a")
+    pinterestButton.setAttribute("href", `https://pinterest.com/pin/create/bookmarklet/?media=${encodeImage}`)
+    pinterestButton.innerHTML =  `<i class="fab fa-pinterest"></i>`      
+
+    let linkedinButton = document.createElement("a");
+    linkedinButton.setAttribute("href", `https://www.linkedin.com/shareArticle?text=${encodeImage}`)
+    linkedinButton.innerHTML =  `<i class="fab fa-linkedin"></i>`      
+
+
+    let whatsappButton = document.createElement("a");
+    whatsappButton.setAttribute("href", `https://api.whatsapp.com/send?text=${encodeImage}`)
+    whatsappButton.innerHTML =  `<i class="fab fa-whatsapp-square"></i>`      
+
+
+    console.log(facebookButton)
+
+    shareContainer.appendChild(facebookButton)
+    shareContainer.appendChild(twitterButton)
+    shareContainer.appendChild(pinterestButton)
+    shareContainer.appendChild(linkedinButton)
+    shareContainer.appendChild(whatsappButton) 
+}
+
+
 // Deleting images 
 
 const removeImage = () => {
+
+    let token = localStorage.getItem("token")
+
+    if(!token) {
+        document.querySelector(".profile-navigate").style.display = "none"
+        document.querySelector(".img-dwnld").style.display = "none"
+        document.querySelector(".individual_share").style.display = "none"
+        document.querySelector(".individual_favorite").style.margin = "0 80px 0 0"
+
+    }else{
+        document.querySelector(".login_request").style.display = "none"
+    }
     
 
     let deleteButton = document.querySelector(".individual_delete")

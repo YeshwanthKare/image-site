@@ -14,7 +14,7 @@
         <script src="/scripts/index.js"></script>
         <script src="../scripts/individual.js"></script>
         <script src="/scripts/settings.js"></script>
-        <!-- <script src="/scripts/session.js"></script> -->
+        <script src="/scripts/session.js"></script>
     </head>
     <body>
         <header>
@@ -167,7 +167,7 @@
                             <div class="extra_setting">
                                 <div class="more_settings">More</div>
                                 <div id="set-password"><a id="set-password" href="#">Change Password</a></div>
-                                <div id="del-account"><a id="del-account" href="">Deactivate account</a></div>
+                                <div id="del-account"><a id="del-account" href="#">Deactivate account</a></div>
                             </div>
 
                             <!-- Cover Image -->
@@ -187,6 +187,9 @@
             </form>
 
 
+
+            <!-- Change Password Modal -->
+
             <div class="modal-form">
                 
                 <!-- The Modal -->
@@ -201,6 +204,30 @@
                                 <input type="password" name="reenter-password" id="reenter-password" placeholder="Re-enter Password" required><br>
                                 <input type="submit" id="password-submit" value="Change my Password">
                             </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- Delete Account Modal -->
+
+            <div class="delete-modal-form">
+                
+                <!-- The Modal -->
+                <div id="del-myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="del-close">&times;</span>
+                        <div class="modal-info">
+                            <p>Are you sure you want to delete Your User Account ?</p>
+                            <div class="modal-button">
+                                <a href="/pages/register.html"><button class="yes">Yes</button></a>
+                                <button class="no"><a href="#">No</a></button>
+                            </div>
                         </div>
                     </div>
 

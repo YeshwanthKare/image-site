@@ -304,12 +304,33 @@ input#user_heading {
   cursor: pointer;
 }
 
+.del-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.del-close:hover,
+.del-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .modal-content {
     position: relative;
     top: 60px;
     height: 150px;
     border-radius: 8px;
 }
+
+/* .modal-content {
+    position: relative;
+    top: 60px;
+    height: 100px;
+    border-radius: 8px;
+} */
 
 .password-modal {
     display: flex;
@@ -335,6 +356,41 @@ input#user_heading {
     width: 70%;
     padding: 4px 20px 4px 20px;
     margin-left: 30px;
+    cursor: pointer;
+}
+
+
+.modal-info p{
+    text-align: center;
+    padding-top: 40px;
+} 
+
+.modal-button {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.yes {
+    margin-right: 20px;
+    padding: 2px 20px;
+    cursor: pointer;
+}
+
+.modal-button a button {
+    text-decoration: none;
+    color: #0078e7;
+}
+
+.no a {
+    text-decoration: none;
+    color: #0078e7;
+}
+
+.no {
+    margin-left:20px;
+    padding: 2px 20px;
     cursor: pointer;
 }
 

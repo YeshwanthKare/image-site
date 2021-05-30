@@ -7,7 +7,9 @@ window.onload = () => {
     userDetailsFetch()
     showUserDetails();
     settingsModal();
-    changePassword()
+    changePassword();
+    deleteUserModal();
+    deleteUserAccount()
 }
 
 searchImages = () => {
@@ -117,7 +119,6 @@ const showUserDetails = () => {
 const settingsModal = () => {
     let passwordButton = document.querySelector("#set-password")
     let previewButton = document.querySelector(".img-dwnld")
-
     
     var modal = document.getElementById("myModal");
 
@@ -126,6 +127,7 @@ const settingsModal = () => {
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
+
 
     // When the user clicks the button, open the modal 
     passwordButton.onclick = function() {
@@ -192,5 +194,75 @@ const changePassword = () => {
     })
     
 }
+
+const deleteUserModal = () => {
+    const deleteButton = document.querySelector("#del-account")
+    console.log(deleteButton)
+
+
+    var modal = document.getElementById("del-myModal");
+    let No = document.querySelector(".no")
+
+    // Get the button that opens the modal
+    // var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("del-close")[0];
+    
+    deleteButton.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    No.onclick = () => {
+        modal.style.display = "none"
+    }
+
+}
+
+const deleteUserAccount = () => {
+
+    let token = window.localStorage.getItem("token")
+    let deleteButton = document.querySelector(".yes")
+
+
+    deleteButton.addEventListener("click", () => {
+        let userURl = `http://localhost:3002/users/register`
+
+        fetch(`${userURl}/${token}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((res) => {
+            return res.json()
+        })
+        .then((res) => {
+            if(res){
+                localStorage.removeItem("token")
+                location.href ="/pages/register.html"
+            }
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    })
+    
+}
+
+
 
 

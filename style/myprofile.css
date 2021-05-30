@@ -219,8 +219,11 @@
 }
 
 
-
-
+.myprofile-footer {
+    background-color:slategrey;
+    width: 100%;
+    padding: 40px;
+}
 
 
 

@@ -15,10 +15,11 @@
 }
 
 .dropdown_container {
-    background-color: #eaecee;
+    background-color: #79bac1;
     height: 170px;
-    width: 475px;
+    width: 480px;
     display: flex;
+    border: 1px solid rgba(0,0,0,0.2);
 }
 
 .media {
@@ -30,12 +31,12 @@
 
 .media b {
     margin-left: 60px;
-    color: #555;
+    color: #1b262c;
     display: flex;
 }
 
 .media li {
-    padding: 10px 15px;
+    padding: 10px 10px;
     color: bisque;
 }
 
@@ -47,7 +48,7 @@
 
 .community b {
     text-align: left;
-    color: #555;
+    color: #1b262c;
 }
 
 .community li {
@@ -65,7 +66,7 @@
 .about b {
     text-align: left;
     margin-left: 20px;
-    color: #555;
+    color: #1b262c;
     padding-left: 20px;
 }
 
@@ -118,42 +119,52 @@ body {
 }
 
 .main-header {
-    background-color: white;
+    /* background-color: #114e60; */
+    /* background-color: #fff; */
+    background-color: #d8e3e7;
     margin: 0;
     padding: 0;
     height: 60px;
     display: flex;
     align-items: center;
     position: relative;
-    border: 1px solid #eaecee;
+    /* border: 1px solid #eaecee; */
 }
 
 .main-header .nav-right li a {
     margin: 13px 0;
     padding: 5px 15px!important;
-    color: #191b26;
-    font-size: 0.9em !important;
+    color: #1b262c;
+    /* color: #f4eee8; */
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    /* font-weight: 400; */
+    font-weight: 600;
     transition: all 0.2s ease;
 }
 
 .main-header .nav-right li a:hover {
-    color: darkgray;
+    color: #2a7886;
 }
+
+#hr-hide {
+    border-color:rgba(0,0,0,0.2);
+}
+
 
 .main-header .nav-left li a {
     margin: 13px 0;
     padding: 5px 15px!important;
-    color: #191b26;
-    font-size: 0.9em !important;
+    /* color: #f4eee8; */
+    color: #1b262c;
+    font-size: 14px;
+    font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     /* font-weight: 400; */
     transition:all 0.2s ease;
 }
 
 .main-header .nav-left li a:hover {
-    color: darkgray;
+    color: #2a7886;
 }
 
 .main-header .nav-right li.user_profile_pic {
@@ -172,7 +183,7 @@ body {
 .main-header .nav-right li.user_profile_dropdown {
     height: 170px;
     width: auto;
-    background-color: #eaecee;
+    background-color: #bdc7c9;
     position: absolute;
     transform: translate3d(220px, 116px,0);
     z-index: 4;
@@ -213,7 +224,7 @@ body {
     .dropdown_container {
         /* position: absolute; */
         top: 5;
-        background-color: #eaecee;
+        background-color: #2a7886;
         height: 290px;
         width: 488px;
         display: flex;
@@ -357,7 +368,7 @@ body {
     font-weight: 600;
     font-family: Lobster,sans-serif;
     margin-left: 20px;
-    background: -webkit-linear-gradient(#4b0082, #6a5acd);
+    background: -webkit-linear-gradient(#325288, #114e60);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -695,17 +706,17 @@ body{
     border: none;
     color: white;
     padding: 12px 60px;
-    background: #1e90ff;
+    background: #00a8cc;
     border-radius: 20px;
     font-size: 16px;
-    font-family: sans-serif;
-    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
     left: 568px;
     
 }
 
 .footer a button:hover {
-    background: #1153ff  !important;
+    background: #126e82 !important;
     cursor: pointer !important;
 }
 
@@ -751,30 +762,30 @@ body{
     border: none;
     color: white;
     padding: 12px 60px;
-    background: #1e90ff;
+    background: #00a8cc;
     border-radius: 20px;
     font-size: 16px;
-    font-family: sans-serif;
-    font-weight: 400;
+    font-family: Arial, Helvetica,sans-serif;
+    font-weight: 600;
     height: fit-content;
 }
 
 .footer .footer_data a button:hover {
-    background: #1153ff;
+    background: #0c7b93;
     cursor: pointer;
 }
 
 .display-right button {
     border: none;
     padding: 10px 30px;
-    background-color: #1e90ff!important;
+    background-color: #00a8cc!important;
     color: #fff!important;
     border-radius: 16px;
     cursor: pointer;
 }
 
 .display-right button:hover {
-    background-color: #483d8b !important;
+    background-color: #0c7b93 !important;
 }
 
 .images {

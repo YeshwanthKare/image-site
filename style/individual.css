@@ -374,6 +374,11 @@
   cursor: pointer;
 }
 
+.modal-content {
+    position: relative;
+    top: 100px;
+}
+
 .modal-info p{
     text-align: center;
     padding-top: 20px;

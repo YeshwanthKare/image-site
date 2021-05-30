@@ -194,7 +194,7 @@ let token  = window.localStorage.getItem("token")
 
 
 const userProfileImage = (data) => {
-    console.log(data)
+    // console.log(data)
     for (const img of data) {
         let userName = img.username;
         console.log(userName)

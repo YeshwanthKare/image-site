@@ -13,6 +13,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/scripts/index.js"></script>
         <script src="../scripts/individual.js"></script>
+        <script src="/scripts/settings.js"></script>
         <!-- <script src="/scripts/session.js"></script> -->
     </head>
     <body>
@@ -104,7 +105,7 @@
                             <li><a href="/pages/upload.html">Upload</a></li>
                             <li><a href="/pages/settings.html">settings</a></li>
                             <hr>
-                            <li><a href="#">Logout</a></li>
+                            <li onclick="logOut()"><a onclick="logOut()" href="#">Logout</a></li>
                         </ul>
                     </li>
                     <li class="display-right nav-pad"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
@@ -160,12 +161,12 @@
                             <span id="option-heading">Options</span>
                             <div class="email_setting">
                                 <div class="email-setting-header">Email Address</div>
-                                <div class="current_email">Imagegram@gram.com</div>
-                                <a href="">Imagegram@gram.com</a>
+                                <div class="current_email"></div>
+                                
                             </div>
                             <div class="extra_setting">
                                 <div class="more_settings">More</div>
-                                <div id="set-password"><a id="set-password" href="">Change Password</a></div>
+                                <div id="set-password"><a id="set-password" href="#">Change Password</a></div>
                                 <div id="del-account"><a id="del-account" href="">Deactivate account</a></div>
                             </div>
 
@@ -182,7 +183,36 @@
                 <div class="settings_save">
                     <input type="submit" value="Save">
                 </div>
+
             </form>
+
+
+            <div class="modal-form">
+                
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="modal-info">
+                            <form class="password-modal">                                
+                                <input type="password" name="new-password" id="new-password" placeholder="New password" required><br>
+                                <input type="password" name="reenter-password" id="reenter-password" placeholder="Re-enter Password" required><br>
+                                <input type="submit" id="password-submit" value="Change my Password">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="hr-line"></div>
+            <div class="join"></div>
+            <div id="login"></div>
+            <div class="sign-up"></div>
 
         <script>
             $(document).ready(() => {
@@ -197,65 +227,7 @@
                
             })
         </script> 
-        <script>
-            window.onload = () => {
-                searchImages();
-                dropDown();
-                userSettingFetch();
-                removingLogin();
-            }
-
-            searchImages = () => {
-                searchParameters("#register_option", "search_submit", "#register_Search")
-            }
-        </script>
-        <script>
-            let url = `http://localhost:3002/users/settings`
-            let form = document.getElementById("reg-form");
-
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-                let profileImage = document.querySelector("#profile-image");
-                let coverImage = document.querySelector("#cover-image");
-
-                let formData = new FormData()
-
-
-                let user_id = window.localStorage.getItem("token")
-                let username = document.getElementById("user_heading").value;
-                let city = document.getElementById("city_name").value;
-                let country = document.getElementById("country_name").value;
-                console.log(profileImage.files)
-
-                formData.append("user_id", user_id); 
-                formData.append("username", username);
-                formData.append("city", city);
-                formData.append("country", country);
-                formData.append("coverImage", coverImage.files[0])
-                formData.append("profileImage", profileImage.files[0]);
-
-                console.log(formData)
-
-
-                fetch(`${url}`, {
-                    method: "POST",
-                    body: formData
-                })
-                .then((res) => {
-                    console.log(res)
-                    window.location.href = `/pages/myprofile.html`
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-            })
-
-            let token = window.localStorage.getItem("token")
-            console.log(token)
-            
-            
-
-            
-        </script>
+        
+        
     </body>
 </html>

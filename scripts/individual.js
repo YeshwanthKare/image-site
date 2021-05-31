@@ -103,29 +103,24 @@ const showIndividualImage = (image) => {
 
     let downloadContainer = document.querySelector(".picture-size");
     // console.log(downloadContainer)
+    
 
     let ulList = `
             <ul>
-                <li class="small-image">
-                    <a href="${image.previewURL}" download="${image.tags[0]}" target="_blank">
-                        150px 
-                    </a>
-                </li>
-                <hr>
-                <li class="medium-image">
-                    <a href="${image.imageURL}" download="${image.tags[0]}" target="_blank">
+                <li class="medium" class="medium-image">
+                    <a download="${image.webformatURL}">
                         640px
                     </a>
                 </li>
                 <hr>
                 <li class="large-image">
-                    <a href="${image.largeImageURL}" download="${image.tags[0]}" target="_blank">
+                    <a download='${image.largeImageURL}'>
                         1280px
                     </a>
                 </li>
                 <hr>
                 <li class="hd-image">
-                    <a href="${image.fullHDURL}" download="${image.tags[0]}" target="_blank">
+                    <a download='${image.fullHDURL}'>
                         1920px
                     </a>
                 </li>
@@ -134,6 +129,28 @@ const showIndividualImage = (image) => {
             // console.log(ulList)
 
     downloadContainer.innerHTML = ulList
+
+    document.querySelector(".medium").addEventListener("click", () => {
+        let imageEl = image.webformatURL   
+        const fileName = getFileName(imageEl) 
+        saveAs(imageEl, fileName)    
+    })
+
+    document.querySelector(".large-image").addEventListener("click", () => {
+        let imageEl = image.largeImageURL   
+        const fileName = getFileName(imageEl) 
+        saveAs(imageEl, fileName)    
+    })
+
+    document.querySelector(".hd-image").addEventListener("click", () => {
+        let imageEl = image.fullHDURL  
+        const fileName = getFileName(imageEl) 
+        saveAs(imageEl, fileName)    
+    })
+
+    const getFileName = (str) => {
+        return str.substring(str.lastIndexOf("/") + 1)
+    }   
 
 }
 
@@ -213,9 +230,9 @@ const showUserImages = (img) => {
 
     let ulList = `
             <ul>
-                <li class="small-image">
-                    <a href="${userImage}" download="${img.tags}" target="_blank">
-                        View Image
+                <li class="my-image">
+                    <a download="${img.image}">
+                        Download Image
                     </a>
                 </li>
             </ul>`
@@ -223,6 +240,18 @@ const showUserImages = (img) => {
             // console.log(ulList)
 
     downloadContainer.innerHTML = ulList
+
+
+    document.querySelector(".my-image").addEventListener("click", () => {
+        let imageEl = url + img.image 
+        const fileName = getFileName(imageEl) 
+        saveAs(imageEl, fileName)    
+    })
+
+    const getFileName = (str) => {
+        return str.substring(str.lastIndexOf("/") + 1)
+    } 
+
     document.querySelector(".individual_delete").style.display = "block"
     document.querySelector(".individual_like").style.display = 'none'
     document.querySelector(".individual_favorite").style.display = 'none'

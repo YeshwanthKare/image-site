@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
 .myprofile_edit button {
     border: none;
     background: #0a88d3;
-    padding: 4px 6px;
+    padding: 7px 16px;
     border-radius: 8px;
     color: #fff;
     position: absolute;
@@ -25,12 +28,12 @@
 
 
 .myprofile_main {
-    height: 320px;
+    /* height: auto; */
     width: 100%;
 }
 
 .myprofile_container {
-    height: 320px;
+    height: 350px;
     width: 100%;
     /* background-color:#839696; */
     display: flex;
@@ -57,6 +60,7 @@
     left:0;
     right:0;
     background-color: rgba(0, 0, 0, 0.6);
+    /* z-index: -1; */
 }
 
 .myprofile_container > * {
@@ -64,53 +68,61 @@
 }
 
 .myprofile_name {
+    text-transform: capitalize;
     color: white;
     transform: translate3d(0px, -16px, 0px);
     font-weight: 600;
     font-size: 24px;
+    /* font-size: 16px; */
 }
 
 .myprofile_place {
     color: white;
     transform: translate3d(0, -10px, 0);
-    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .myprofile_image  img{
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    background-color: white;
+    /* background-color: white; */
     /* background-image: url(https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png); */
     background-size: cover;
     background-position: center;
+    z-index: 3;
 }
 
 .myprofile_image {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    background-color:#0a88d3;
+    /* background-color:#0a88d3; */
     border: 1px solid gray;
+    /* z-index: 3; */
     /* background-image: url(https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500); */
 }
 
 
 .myprofile_images {
-    background-color: #EAEDED;
+    /* background-color: #EAEDED; */
+    background-color:#e4efe7;
 }
 
 .myprofile_images_container {
     padding-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
     height: 100vh;
     /* background-color: #EAEDED; */
 }
 
 .myprofile_images_wrapper {
+    position: relative;
     height: 100%;
-    margin: 20px 0px 0 20px;
+    margin: 30px 0px 0 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -124,16 +136,16 @@
     width: 400px;
     height: 350px;
     /* padding:10px; */
-    position: absolute;
+    /* position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: 0; */
     /* background-color: blue; */
 }
 
 .myprofile_images_wrapper a .image {
-    /* position: relative; */
+    position: relative;
     height: 350px;
     width: 400px;
 }
@@ -161,7 +173,7 @@
     padding: 40px 0px 0px 0px;
     opacity: 0;
     transition: all ease .25s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    /* transition-timing-function: cubic-bezier(0, 1, 0.5, 1); */
     pointer-events: none;
 }
 
@@ -182,8 +194,11 @@
 .image-specs p {
     color: white;
     pointer-events: none;
-    font-family: sans-serif;
+    font-family: "Open Sans",sans-serif;
     font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .image-specs #name {
@@ -201,13 +216,13 @@
     justify-content: center;
     /* background-color: cadetblue; */
     position: relative;
-    top: -120px;
+    top: -40px;
     left: 420px;
 }
 
 .upload-myimage button {
     padding: 12px 24px 12px 24px;
-    background-color: #EAEDED;
+    background-color: #faf1e6;
     border: 1px solid #ccc;
     border-radius: 7px;
 }
@@ -221,8 +236,10 @@
 
 .myprofile-footer {
     background-color:slategrey;
-    width: 100%;
-    padding: 40px;
+    width: 120%;
+    height: 140px;
+    margin-left: -20px;
+    margin-right: -40px;
 }
 
 

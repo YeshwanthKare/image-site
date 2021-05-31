@@ -1,8 +1,8 @@
 window.onload = () => {
+    removingLogin();
     dropDown();
     imageFetch();
     searchImages();
-    removingLogin();
     userSettingFetch()
 }
 

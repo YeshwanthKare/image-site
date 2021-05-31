@@ -225,3 +225,38 @@
 .search_images .search_images_container .search_wrapper .image:nth-child(3){
     grid-column: span 2;
 }
+
+.search-footer {
+    margin-top: 60px;
+    width: 100%;
+    background-color: #EEEDE7;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-footer h1 {
+    margin-bottom: 20px;
+    color: #232323;
+}
+
+.search-footer p {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #232323;
+}
+
+.search-footer .search-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-icons a {
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #232323;
+}

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 * {
     margin: 0;
@@ -15,11 +15,12 @@
 }
 
 .dropdown_container {
-    background-color: #79bac1;
+    /* background-color: #BDC7C9; */
     height: 170px;
     width: 480px;
     display: flex;
     border: 1px solid rgba(0,0,0,0.2);
+    background-color: #EEEDE7;
 }
 
 .media {
@@ -116,12 +117,14 @@ body {
     background-color: none;
     box-sizing: border-box;
     overflow-x: hidden;
+    /* background-color: #D4F1F4; */
+    /* background-color: #EAEDED; */
 }
 
 .main-header {
     /* background-color: #114e60; */
-    /* background-color: #fff; */
-    background-color: #d8e3e7;
+    background-color: #fff;
+    /* background-color: #d8e3e7; */
     margin: 0;
     padding: 0;
     height: 60px;
@@ -183,7 +186,7 @@ body {
 .main-header .nav-right li.user_profile_dropdown {
     height: 170px;
     width: auto;
-    background-color: #bdc7c9;
+    background-color: #EEEDE7;
     position: absolute;
     transform: translate3d(220px, 116px,0);
     z-index: 4;
@@ -605,6 +608,8 @@ select {
   /* right: 40px; */
 }
 
+
+
 .search_arrow {
     position: absolute;
     right: 8px;
@@ -727,6 +732,7 @@ body{
     align-items: center;
     position: relative;
     left: 285px;
+    /* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     
 }
 
@@ -735,6 +741,7 @@ body{
     top: -80px;
     color: #515457;
     font-size: 25px;
+    font-family: "Open Sans", sans-serif;
 }
 
 .footer .footer_data p:nth-child(2){
@@ -742,7 +749,7 @@ body{
     top: 10px;
     color: #515457;
     font-size: 25px;
-    font-family: Open Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .footer .footer_data p:nth-child(3){
@@ -752,7 +759,7 @@ body{
     text-align: center;
     color: #515457;
     font-size: 24px;
-    font-family: Open Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .footer .footer_data a button {
@@ -789,7 +796,7 @@ body{
 }
 
 .images {
-    height: 1550px;
+    height: auto;
     /* background-color:navy; */
     margin: 0;
     padding: 0;
@@ -814,7 +821,8 @@ body{
     font-family: monospace;
     width: auto;
     padding: 40px 0px 0px 0px;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    /* height: 40px; */
+    /* transition-timing-function: cubic-bezier(0, 1, 0.5, 1); */
     /* background-color: seagreen; */
 
 }
@@ -823,7 +831,7 @@ body{
     opacity: 1;
     background: linear-gradient(180deg,transparent, rgba(57, 57, 57, .05),rgba(57,57,57, .61), rgba(57,57,57, .61));
     bottom: 0px;
-    height: 40px;
+    /* height: 40px; */
     overflow:visible;
     left: -10px;
     right: 0;
@@ -870,7 +878,7 @@ body{
     grid-gap: 20px;
     grid-auto-flow: dense !important;
     position: relative;
-    /* background-color: salmon; */
+    /* background-color: #D4F1F4; */
 }
 
 .images .images_container .wrapper .image img{
@@ -969,6 +977,10 @@ body{
 .images .images_container .wrapper .image:nth-child(3){
     grid-column: span 2;
 }
+
+
+
+
 
 
 

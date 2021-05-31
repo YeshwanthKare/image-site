@@ -33,19 +33,21 @@ const userImageFetch = () => {
 //     wrapperSelector(images, ".photo_wrapper")
 // }
 let user_id = window.localStorage.getItem("token")
+console.log(user_id)
 
 const addUserImages = (images) => {
     var imageEl = document.querySelector(".myprofile_images_wrapper");
     var uploadedImage = "";
     for (const img of images) {
-        if (img) {
-            document.querySelector(".upload-myimage").style.display = 'none'
-        }else{
-            document.querySelector(".upload-myimage").style.display = 'block'
-
-        }
 
         if(user_id === img.user_id){
+            if (img) {
+                document.querySelector(".upload-myimage").style.display = 'none'
+                document.querySelector(".myprofile_images").style.backgroundColor = '#FFF'
+            }else{
+                document.querySelector(".upload-myimage").style.display = 'block'
+
+            }
             let postImage = API_BASE_URL + img.image;
             console.log(postImage)
             console.log(images)

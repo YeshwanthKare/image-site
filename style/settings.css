@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+
 .body_settings .body_settings_container ul li {
     display: inline-block;
     margin-top: 30px;
     padding: 20px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 .body_settings .body_settings_container ul li:nth-child(2) {
@@ -31,6 +38,13 @@ form {
     margin-top: 50px
 }
 
+#personal, #option-heading {
+    font-size: 16px;
+    font-family: "Open Sans";
+    font-weight: 600;
+    color: #05445E;
+}
+
 .left_column, .right_column {
     width: 630px;
     height: 500px;
@@ -51,18 +65,54 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    object-fit: cover;
+    background-size: cover;
+    background-color: #D4F1F4;
+}
+
+ul li a{
+    font-family: "Open Sans", Helvetica, sans-serif;
+    text-decoration: none;
+    color: #05445E;
+}
+
+hr {
+    border-color: 1px solid #05445E;
+}
+
+#personal, .username_setting span{
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    color: #05445E;
+}
+
+#profile {
+    color:#05445E;
+}
+
+#city {
+    color: #05445E;
+}
+
+#country {
+    color: #05445E;
+}
+
+.email-setting-header {
+    color: #05445E;
 }
 
 .profile_image_box {
     height: 180px;
     width: 180px;
-    /* background-color: cornflowerblue; */
+    background-color: #E7D2CC;
+    border: 1px solid rgba(0,0,0,0.4);
     position: relative;
     left: 100px;
     bottom: 10px;
     /* background-image: url(http://localhost:3002/uploads/profileImage-1621783266858.jpg); */
     background-size: cover;
     background-position: center;
+    border-radius: 8px;
 }
 
 .cover-image {
@@ -90,8 +140,8 @@ body {
     padding-bottom: 4px;
     width: 100%;
     content: "Upload Photo";
-    background-color: #1e90ff;
-    color: white;
+    background-color: #EEEDE7;
+    color: #868B8E;
     cursor: pointer;
 }
 
@@ -125,38 +175,62 @@ input#user_heading {
     transform: translateX(22px);
     font-size: 18px;
     padding-left: 8px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+.extra_setting {
+    margin-top: -100px;
+}
+
+.extra_setting .more_settings {
+
 }
 
 .cover-image {
-    transform:translate3d(-120px, 40px, 0)
+    transform:translate3d(-118px, 0px, 0)
+    
+}
+
+.cover-image span {
+    color: #05445E;
+}
+
+.cover-image input {
+   
 }
 
 .settings_save {
     display: flex;
     height: 100px;
     width: 100%;
-    background-color: #aaa;
+    background-color: #75E6DA;
     justify-content: center;
     align-items: center;
 }
 
 .settings_save input {
     padding: 10px 100px;
-    background-color: #1e90ff;
+    background-color: #189AB4;
     color: white;
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.settings_save button:hover {
-    background-color: #1e9aff;
+.settings_save input:hover {
+    background-color: #05445E;
 }
 
 .settings_save button a {
     font-size: 16px;
     text-decoration: none;
     color: white;
+    /* font-weight: 600; */
 }
 
 #personal {
@@ -197,10 +271,14 @@ input#user_heading {
 
 .city_setting input {
     transform: translateX(66px);
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.4);
 }
 
 .country_setting input {
     transform: translateX(36px);
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.4);
 }
 
 .country_setting {
@@ -241,16 +319,31 @@ input#user_heading {
 
 .more_settings {
     position: absolute;
-    top: 210px;
+    top: 110px;
     left: 20px;
+    color: #05445E;
 }
 
 #set-password {
-    transform: translate3d(-100px,-22px,0);
+    transform: translate3d(-100px, -44px,0);
+    padding: 8px 18px;
+    background-color: #0078e7;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
 }
 
 #del-account {
-    transform: translate3d(60px, -40px, 0);
+    transform: translate3d(140px, -79px, 0);
+    padding: 8px 18px;
+    background-color: #0078e7;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+}
+
+#del-account:hover, #set-password:hover{
+    background-color: #05445E;
 }
 
 .user_profile_dropdown {
@@ -277,7 +370,7 @@ input#user_heading {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
 }
 
 /* Modal Content */

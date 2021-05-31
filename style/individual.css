@@ -301,7 +301,7 @@
 }
 
 .picture-size {
-    background-color: #eaeded;
+    background-color: #f0ebcc;
     width: 30%;
     text-align: center;
     position: relative;
@@ -309,12 +309,14 @@
     left: 195px;
     border-radius: 7px;
     display: none;
-    
+    border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .picture-size a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .picture-size a:hover {

@@ -1,8 +1,8 @@
 window.onload = () => {
+    removingLogin();
     searchImages();
     dropDown();
     userSettingFetch();
-    removingLogin();
     postSettingsData();
     userDetailsFetch()
     showUserDetails();
@@ -34,6 +34,8 @@ const postSettingsData = () => {
         let country = document.getElementById("country_name").value;
         console.log(profileImage.files)
 
+        
+
         formData.append("user_id", user_id); 
         formData.append("username", username);
         formData.append("city", city);
@@ -41,7 +43,35 @@ const postSettingsData = () => {
         formData.append("coverImage", coverImage.files[0])
         formData.append("profileImage", profileImage.files[0]);
 
-        // console.log(formData)
+        let settings = userSettingsFetch()
+        settings.then((res) => {
+            console.log(res)
+
+            
+            if(profileImage.files[0]){
+                formData.append("profileImage", profileImage.files[0]);
+                console.log(profileImage.value)
+                // return formData
+            }else{
+                if(!profileImage.files[0] && coverImage.files[0]){
+                    alert("Please upload Profile Image ")
+                }                
+            }
+
+            if(coverImage.files[0]){
+                formData.append("coverImage", coverImage.files[0]);
+                console.log(coverImage.value)
+                // return formData
+            }else{
+                if(!coverImage.files[0] && profileImage.files[0]){
+                    alert("Please upload Cover Image")
+                }
+            }           
+       
+        })
+
+        
+        console.log(formData)
 
 
         fetch(`${url}`, {
@@ -57,6 +87,8 @@ const postSettingsData = () => {
         })
     })
 }
+
+
 
 const userDetailsFetch = () => {
     let userDetailsURL = `http://localhost:3002/users` 

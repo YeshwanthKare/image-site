@@ -14,6 +14,7 @@
         <script src="/scripts/index.js"></script>
         <script src="/scripts/myprofile.js"></script>
         <script src="/config1.js"></script>
+        <script src="/scripts/session.js"></script>
     </head>
     <body>
         <header>
@@ -104,7 +105,7 @@
                             <li><a href="/pages/upload.html">Upload</a></li>
                             <li><a href="/pages/settings.html">settings</a></li>
                             <hr>
-                            <li><a href="#">Logout</a></li>
+                            <li onclick="logOut()"><a href="#">Logout</a></li>
                         </ul>
                     </li>
                     <li class="display-right nav-pad"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
@@ -128,16 +129,16 @@
                 <div class="myprofile_images_wrapper">  
                     <div class="upload-myimage">
                         <button><a href="upload.html">Upload Images Now</a></button>
-                    </div>                 
+                    </div>  
+                                   
+                </div>
+                <div class="myprofile-footer">
+            
                 </div>
             </div>
         </div>
 
-        <!-- Footer -->
-
-        <div class="myprofile-footer">
-            
-        </div>
+       
 
         <script>
             $(document).ready(() => {

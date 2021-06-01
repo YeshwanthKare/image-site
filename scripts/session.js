@@ -1,8 +1,8 @@
 function checkIfLoggedIn() {
     const currentToken = localStorage.getItem("token")
-    if(currentToken){
+    if(typeof currentToken !== "undefined"){
         if(location.href.includes("/pages/login.html") || location.href.includes("/pages/register.html")){
-            location.href = "/pages/login.html";
+            location.href != "/pages/login.html";
         }
     }else{
         if(!location.href.includes("/pages/login.html") && !location.href.includes("/pages/register.html") && 

@@ -359,7 +359,15 @@ const removeImage = () => {
 
     let token = localStorage.getItem("token")
 
-    if(!token) {
+
+    if(token === "undefined") {
+        document.querySelector(".profile-navigate").style.display = "none"
+        document.querySelector(".img-dwnld").style.display = "none"
+        document.querySelector(".individual_share").style.display = "none"
+        document.querySelector(".individual_favorite").style.margin = "0 80px 0 0"
+        document.querySelector(".hr-line").style.display = "block"
+    }
+    else if(!token) {
         document.querySelector(".profile-navigate").style.display = "none"
         document.querySelector(".img-dwnld").style.display = "none"
         document.querySelector(".individual_share").style.display = "none"

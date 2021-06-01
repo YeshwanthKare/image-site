@@ -4,17 +4,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Upload Image</title>
-        <!-- CSS only -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+        <title>Settings</title>
         <link rel="stylesheet" href="/style/index.css">
         <link rel="stylesheet" href="/style/register.css">
         <link rel="stylesheet" href="/style/login.css">
-        <!-- <link rel="stylesheet" href="/style/settings.css"> -->
-        <link rel="stylesheet" href="/style/upload.css">
+        <link rel="stylesheet" href="/style/settings.css">
         <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/scripts/index.js"></script>
+        <script src="../scripts/individual.js"></script>
+        <script src="/scripts/settings.js"></script>
         <script src="/scripts/session.js"></script>
     </head>
     <body>
@@ -31,7 +30,7 @@
                             <i class="fas fa-search feature_search_register"></i>
                             <form>
                                 <input type="text" id="register_Search" placeholder="Search">
-                                <input type="submit" id="search_submit">
+                                <input type="submit" id="search_submit">    
                             </form>
                             <div class="register_select">
                                 <select name="option" id="register_option">
@@ -74,22 +73,19 @@
                                 <hr>
                                 <ul class="about">
                                     <b>About</b>
-                                    <li><a class="about_us" href=" https://design-portfolio-af396.web.app" target="_blank">About Us</a></li>
+                                    <li><a class="about_us" href="https://design-portfolio-af396.web.app" target="_blank">About Us</a></li>
+                                    <!-- <li><a class="language_icon" href="#"><i class="fas fa-globe"></i> Language</a></li> -->
                                     <hr class="my-hr-line">                                    
                                     <li class="social_icons">
+                                    
                                         <a class="icon" href="https://www.facebook.com/yesh.surya.5" target="_blank"><i class="fab fa-facebook-square"></i></a>
                                         <a class="icon" href="https://www.instagram.com/yeshwanth_nadh/" target="_blank"><i class="fab fa-instagram"></i></a>
                                         <a class="icon" href="https://twitter.com/yeshsuriya" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    </li>
+                                    </li>                               
                                 </ul>
                             </div>
-                        </div>
-                    </li>
-                    <!-- <li class="display-right nav-pad"><a id="login" href="/pages/login.html">Log in</a></li>
-                    <div>
-                        <hr style="display: inline; width: 100%; position: relative; color: #adb5bd !important;">
-                    </div>
-                    <li class="display-right join nav-pad"><a href="/pages/register.html">Join</a></li> -->
+                        </div>                        
+                    </li>                    
                     <li class="user_profile_pic"></li>
                     <li class="user_profile_dropdown">
                         <ul>
@@ -100,18 +96,18 @@
                             <li onclick="logOut()"><a onclick="logOut()" href="#">Logout</a></li>
                         </ul>
                     </li>
-                    <li class="display-right nav-pad upload_left"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
+                    <li class="display-right nav-pad"><a href="/pages/upload.html"><button class="upload_button nav-hide"><i class="fas fa-upload"></i> Upload</button></a></li>
                     <li class="menu-bar">
                         <a href="#">
                             <i class="fas fa-bars"></i>
                         </a>
                     </li>
                 </ul>
-
             </div>
         </header>
-        <div class="upload_body">
-            <div class="upload_container">
+        
+        <div class="body_settings">
+            <div class="body_settings_container">
                 <ul class="nav_settings">
                     <li><a href="/pages/upload.html">Uploads</a></li>
                     <li class="border-setting"><a href="/pages/settings.html">Settings</a></li>
@@ -119,18 +115,113 @@
                 </ul>
             </div>
             <hr>
-        </div>
-        <div class="upload_image">
-            <form id="upload-user-image">
-                <label for="name">Name of the Image:</label>
-                <input type="text" id="name" name="name" required><br><br>
-                <label id="tag" for="tags">Enter any <b>Four</b> tags that describes the best of the Image:</label>
-                <input type="text" id="tags" name="tags" data-role="tagsinput" required/>
-                <input id="image_upload" type="file" name="image" value="Choose File To Upload" required>
-                <input id="submit" type="submit" value="Submit">
+            <form id="reg-form" enctype="multipart/form-data">
+               <div class="personal-data">
+                        <div class="left_column">
+                            <span id="personal">Personal Data</span>
+                            <div class="username_setting"><span>Username</span>
+                                <!-- <div class="username_heading">Username</div> -->
+                                <input id="user_heading" type="text" name="username">
+                            </div>
+                            <div class="profile_image_setting"><span id="profile">Profile Image</span>
+                                <!-- <div class="profile_image_heading">Profile Image</div> -->
+                                <div class="profile_image_box">
+                                    <label for="profile-image">Upload photo</label>
+                                    <input type="file" id="profile-image" name="profileImage" />
+                                </div>
+                            </div>
+                            <div class="place_setting">
+                                <div class="city_setting"><span id="city">City</span>
+                                    <!-- <div class="city_heading">City</div> -->
+                                    <input id="city_name" type="text" name="city">
+                                </div>
+                                <div class="country_setting"><span id="country">Country</span>
+                                    <!-- <div class="country_heading">Country</div> -->
+                                    <input id="country_name" type="text" name="country">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_column">
+                            <span id="option-heading">Options</span>
+                            <div class="email_setting">
+                                <div class="email-setting-header">Email Address</div>
+                                <div class="current_email"></div>
+                                
+                            </div>
+                            <div class="extra_setting">
+                                <div class="more_settings">More</div>
+                                <div id="set-password"><a id="set-password" href="#">Change Password</a></div>
+                                <div id="del-account"><a id="del-account" href="#">Deactivate account</a></div>
+                            </div>
+
+                            <!-- Cover Image -->
+
+                            <div class="cover-image">
+                                <label for="cover-image"><span id="cover"><b>Cover Image:</b></span> </label>
+                                <input type="file" name="cover-image" id="cover-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings_save">
+                    <input type="submit" value="Save">
+                </div>
             </form>
-            
-        </div>
+
+
+
+            <!-- Change Password Modal -->
+
+            <div class="modal-form">
+                
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="modal-info">
+                            <form class="password-modal">                                
+                                <input type="password" name="new-password" id="new-password" placeholder="New password" required><br>
+                                <input type="password" name="reenter-password" id="reenter-password" placeholder="Re-enter Password" required><br>
+                                <input type="submit" id="password-submit" value="Change my Password">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- Delete Account Modal -->
+
+            <div class="delete-modal-form">
+                
+                <!-- The Modal -->
+                <div id="del-myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="del-close">&times;</span>
+                        <div class="modal-info">
+                            <p>Are you sure you want to delete Your User Account ?</p>
+                            <div class="modal-button">
+                                <a href="/pages/register.html"><button class="yes">Yes</button></a>
+                                <button class="no"><a href="#">No</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="hr-line"></div>
+            <div class="join"></div>
+            <div id="login"></div>
+            <div class="sign-up"></div>
 
         <script>
             $(document).ready(() => {
@@ -145,59 +236,7 @@
                
             })
         </script> 
-        <script>
-            window.onload = () => {
-                searchImages();
-                dropDown();
-                userSettingFetch()
-            }
-
-            searchImages = () => {
-                searchParameters("#register_option", "search_submit", "#register_Search")
-            }
-        </script>
-        <script>
-            let url = `https://image-site-app.herokuapp.com/users/image/`
-            let form = document.getElementById("upload-user-image");
-
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-                let name = document.querySelector("#name")
-                let image = document.querySelector('input[type="file"]');
-                let tags = document.querySelector("#tags");
-
-                console.log(tags.value)
-
-                let formData = new FormData()
-
-
-                let user_id = window.localStorage.getItem("token")
-                console.log(image.files)
-                formData.append("name", name.value);
-                formData.append("tags", tags.value)
-                formData.append("user_id", user_id); 
-                formData.append("image", image.files[0]);
-
-                console.log(formData)
-
-
-                fetch(`${url}`, {
-                    method: "POST",
-                    body: formData
-                })
-                .then((res) => {
-                    console.log(res)
-                })
-                .then((res) => {
-                    window.location.href = `/pages/myprofile.html`
-                    console.log(res)
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-            })
-        </script>
         
-
+        
     </body>
 </html>

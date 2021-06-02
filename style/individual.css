@@ -120,12 +120,17 @@
 }
 
 .profile_name {
+    text-transform: capitalize;
     flex-grow: 1;
     font-style: normal;
     font-size: 16px;
     font-weight: 700;
     font-family: sans-serif;
     color: #007890;
+}
+
+.image-elem p {
+    text-transform: capitalize;
 }
 
 .profile-navigate {
@@ -159,9 +164,10 @@
     /* position: absolute; */
     border-radius: 12px;
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 
-.individual_like {
+.individual_like, .individual_comment {
     /* transform: translate3d(10px, 0, 0); */
     border: transparent;
     padding: 6px 24px;
@@ -475,7 +481,7 @@ body {
     background-color: #fff;
     position: relative;
     left: 212px;
-    top: -36px;
+    top: -112px;
     padding: 10px;
     justify-content: space-around; 
     flex-wrap: wrap;
